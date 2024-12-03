@@ -1,0 +1,46 @@
+.search-container {
+    position: relative;
+    width: 100%;
+}
+
+.search-container input[type="text"] {
+    width: 100%;
+    position: relative;
+    cursor: pointer;
+}
+
+
+
+.i::placeholder {
+    font-style: italic;
+}
+
+.popup {
+    width: 100%;
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 99999;
+    /* max-height: 15em; */
+    overflow-y: auto;
+    margin: 1em 0;
+}
+
+.popup-item {
+    display: flex;
+    flex-direction: row !important;
+    align-items: center;
+    gap: 1em;
+    border-bottom: 1px solid #ccc;
+    cursor: pointer;
+    padding: 1em;
+}
+
+.popup-item:hover {
+    background: #f0f0f0;
+}
+
+.popup-item input[type="checkbox"] {
+    margin-right: 10px;
+}

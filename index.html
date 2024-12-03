@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apercu du formulaire</title>
+    <link rel="stylesheet" href="Css/global.css">
+    <link rel="stylesheet" href="Css/select.css">
+    <link rel="stylesheet" href="Css/pop-modals.css">
+    <link rel="stylesheet" href="Desktop/responsive-desktop.css">
+    <link rel="stylesheet" href="Css/main-section-etape1.css">
+</head>
+
+<body>
+    <div>
+        <main id="main">
+            <section class="section-main">
+                <!-- TITLE -->
+                <article class="section-article-picture">
+                    <picture>
+                        <h1>LOUER VOTRE LOGEMENT</h1>
+                    </picture>
+                </article>
+
+
+                <!-- RANGE POURCENTAGE -->
+                <!-- RANGE POURCENTAGE -->
+                <article class="section-article-range">
+                    <picture>
+                        <label class="active">
+                            <p><svg width="30" height="30" viewBox="0 0 30 30" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="15" cy="15" r="15" fill="#03A84E" />
+                                    <path
+                                        d="M12.1055 21.7447L6.26325 16.079C5.91225 15.7386 5.91225 15.1867 6.26325 14.8462L7.53433 13.6135C7.88533 13.2731 8.45446 13.2731 8.80545 13.6135L12.7411 17.4302L21.1708 9.25529C21.5218 8.9149 22.091 8.9149 22.442 9.25529L23.713 10.488C24.064 10.8284 24.064 11.3803 23.713 11.7207L13.3767 21.7447C13.0256 22.0851 12.4565 22.0851 12.1055 21.7447Z"
+                                        fill="white" />
+                                </svg>
+                            </p>
+                            <h4>
+                                Informations sur l’annonce
+                            </h4>
+                        </label>
+                        <label class="hr">
+                            <hr>
+                        </label>
+                        <label class="active">
+                            <p>2</p>
+                            <h4>
+                                Gestion de candidature
+                            </h4>
+                        </label>
+                    </picture>
+                </article>
+
+                <article class="article-title">
+                    <picture>
+                        <i>
+                            <svg width="37" height="37" viewBox="0 0 34 34" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M17 0C7.61182 0 0 7.61456 0 17C0 26.3909 7.61182 34 17 34C26.3882 34 34 26.3909 34 17C34 7.61456 26.3882 0 17 0ZM17 7.54032C18.59 7.54032 19.879 8.82931 19.879 10.4194C19.879 12.0094 18.59 13.2984 17 13.2984C15.41 13.2984 14.121 12.0094 14.121 10.4194C14.121 8.82931 15.41 7.54032 17 7.54032ZM20.8387 24.9516C20.8387 25.4059 20.4704 25.7742 20.0161 25.7742H13.9839C13.5296 25.7742 13.1613 25.4059 13.1613 24.9516V23.3065C13.1613 22.8522 13.5296 22.4839 13.9839 22.4839H14.8065V18.0968H13.9839C13.5296 18.0968 13.1613 17.7285 13.1613 17.2742V15.629C13.1613 15.1748 13.5296 14.8065 13.9839 14.8065H18.371C18.8252 14.8065 19.1935 15.1748 19.1935 15.629V22.4839H20.0161C20.4704 22.4839 20.8387 22.8522 20.8387 23.3065V24.9516Z"
+                                    fill="#2892F5" />
+                            </svg>
+
+                        </i>
+                        <p>Choisissez les documents requis et ajoutez des champs personnalisés pour adapter le
+                            formulaire de candidature à vos besoins.</p>
+                    </picture>
+                </article>
+
+                <picture class="apercu-hr">
+                    <hr>
+                </picture>
+
+                <article class="apercu-form">
+                    <form>
+                        <picture class="picture-title-apercu">
+                            <p>Pièces justificatives demandées</p>
+                            <p>Sélectionnez les documents que vous souhaitez demander aux candidats.</p>
+                        </picture>
+
+                        <picture>
+                            <label class="inpt-style-label">
+                                <figure>
+                                    <div class="p-text">
+                                        <p id="no-selection">Aucun élément sélectionné</p>
+                                    </div>
+                                    <div class="selected">
+                                        <figcaption id="selected-items">
+                                            <!-- Les spans seront ajoutés ici -->
+                                        </figcaption>
+                                    </div>
+                                </figure>
+                            </label>
+                            <figure class="search-container">
+                                <div class="popup">
+                                    <label class="popup-item">
+                                        <input type="checkbox" value="Bulletin de paie"> Bulletin de paie
+                                    </label>
+                                    <label class="popup-item">
+                                        <input type="checkbox" value="Garant"> Garant
+                                    </label>
+                                    <label class="popup-item">
+                                        <input type="checkbox" value="Plusieurs mois d’avance"> Plusieurs mois d’avance
+                                    </label>
+                                    <label class="popup-item">
+                                        <input type="checkbox" value="Déclaration d’impôt"> Déclaration d’impôt
+                                    </label>
+                                    <label class="popup-item">
+                                        <input type="checkbox" value="Recommandation du dernier bailleur">
+                                        Recommandation du dernier bailleur
+                                    </label>
+                                    <label class="popup-item align-center">
+                                        <span>
+                                            <input type="checkbox" id="checkbox-others">Autres
+                                        </span>
+                                        <span class="span-svg">
+                                            <svg width="25" height="25" viewBox="0 0 34 34" id="svg-about" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M17 0C7.61182 0 0 7.61456 0 17C0 26.3909 7.61182 34 17 34C26.3882 34 34 26.3909 34 17C34 7.61456 26.3882 0 17 0ZM17 7.54032C18.59 7.54032 19.879 8.82931 19.879 10.4194C19.879 12.0094 18.59 13.2984 17 13.2984C15.41 13.2984 14.121 12.0094 14.121 10.4194C14.121 8.82931 15.41 7.54032 17 7.54032ZM20.8387 24.9516C20.8387 25.4059 20.4704 25.7742 20.0161 25.7742H13.9839C13.5296 25.7742 13.1613 25.4059 13.1613 24.9516V23.3065C13.1613 22.8522 13.5296 22.4839 13.9839 22.4839H14.8065V18.0968H13.9839C13.5296 18.0968 13.1613 17.7285 13.1613 17.2742V15.629C13.1613 15.1748 13.5296 14.8065 13.9839 14.8065H18.371C18.8252 14.8065 19.1935 15.1748 19.1935 15.629V22.4839H20.0161C20.4704 22.4839 20.8387 22.8522 20.8387 23.3065V24.9516Z"
+                                                    fill="#2892F5" />
+                                            </svg>
+                                            <sub id="sub" class="tooltip">Sélectionner les autres pièces justificatives
+                                                que vous voulez demander aux candidats</sub>
+                                        </span>
+                                    </label>
+
+
+
+                                </div>
+                            </figure>
+
+                            <label class="inpt-style-label">
+                                <figure>
+                                    <div class="p-text">
+                                        <p id="no-selection">Autres pièces justificatives</p>
+                                    </div>
+                                    <div class="selected">
+                                        <figcaption id="selected-items-other">
+                                            <!-- Les spans seront ajoutés ici -->
+                                        </figcaption>
+                                    </div>
+                                </figure>
+                            </label>
+
+
+                        </picture>
+
+                        <picture class="picture-title-apercu">
+                            <p>Créer des champs personnalisé pour la candidature</p>
+                            <p>Ajoutez des champs pour obtenir les informations nécessaires des candidats.</p>
+                        </picture>
+
+                        <picture class="picture-table">
+                            <table class="table">
+                                <thead>
+                                    <tr class="tr">
+                                        <th>Nom du champ</th>
+                                        <th>Type du champ</th>
+                                        <th>Options possibles</th>
+                                        <th>Champ requis</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>lorem</td>
+                                        <td>champ numérique</td>
+                                        <td>
+                                            <label class="inpt-style-label">
+                                                <figure>
+                                                    <div class="p-text">
+                                                        <p id="no-selection">Autres pièces justificatives</p>
+                                                    </div>
+                                                    <div class="selected">
+                                                        <figcaption id="selected-items-other">
+                                                            <!-- Les spans seront ajoutés ici -->
+                                                            <span class="span-select">loreù</span>
+                                                        </figcaption>
+                                                    </div>
+                                                </figure>
+                                            </label>
+                                        </td>
+                                        <td><input type="checkbox" name="" id=""></td>
+                                        <td>
+                                            <p>eye</p>
+                                            <p>delete</p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <button class="btn-blue">Ajouter nouveau champ</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="5" style="text-align: center;">
+                                            <p class="mb-2">Aucun champ personnalisé n’est encore ajouté.</p>
+                                            <button class="btn-blue">Ajouter nouveau champ</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <div class="apercu-btn">
+                                <button class="btn-blue" disabled>Aperçu du formulaire</button>
+                            </div>
+                        </picture>
+
+
+                        <picture class="mt-hr">
+                            <hr>
+                        </picture>
+                        <picture class="btn-picture">
+                            <div>
+                                <button>Précédent</button>
+                            </div>
+                            <div>
+                                <button>Annuler</button>
+                                <button>Sauvegarder</button>
+                                <button class="bg-green btn-blue">Publier l’annonce</button>
+                            </div>
+                        </picture>
+                    </form>
+                </article>
+            </section>
+
+            <figure id="modale-apercu">
+                <section>
+                    <article class="section-article-picture">
+                        <picture>
+                            <h1>Aperçu du formulaire <span>x</span></h1>
+
+                        </picture>
+                    </article>
+                    <article class="section-article-range">
+
+                        <picture>
+                            <label class="active">
+                                <p>1
+                                </p>
+                                <h4>
+                                    Informations sur l’annonce
+                                </h4>
+                            </label>
+                            <label class="hr">
+                                <hr>
+                            </label>
+                            <label>
+                                <p>2</p>
+                                <h4>
+                                    Documents requis
+                                </h4>
+                            </label>
+                            <label class="hr">
+                                <hr>
+                            </label>
+                            <label>
+                                <p>3</p>
+                                <h4>
+                                    Informations complémentaire
+                                </h4>
+                            </label>
+                        </picture>
+                    </article>
+
+                    <article class="article-form-pop">
+                        <form>
+                            <h2>Informations personnelles</h2>
+                            <label>
+                                <p class="label-title">Nom *</p>
+                                <div class="inpt-child-div">
+                                    <input type="text" class="inpt-child" placeholder="Nom du candidat *">
+                                </div>
+                            </label>
+                            <label>
+                                <p class="label-title">Prénoms *</p>
+                                <div class="inpt-child-div">
+                                    <input type="text" class="inpt-child" placeholder="Nom du candidat *">
+                                </div>
+                            </label>
+                            <label>
+                                <p class="label-title">Email *</p>
+                                <div class="inpt-child-div">
+                                    <input type="text" class="inpt-child" placeholder="Nom du candidat *">
+                                </div>
+                            </label>
+                            <label>
+                                <p class="label-title">Téléphones *</p>
+                                <div class="inpt-child-div">
+                                    <input type="text" class="inpt-child" placeholder="Nom du candidat *">
+                                </div>
+                            </label>
+
+                            <h2>Garant</h2>
+                            <label>
+                                <p class="label-title">Nom *</p>
+                                <div class="inpt-child-div">
+                                    <input type="text" class="inpt-child" placeholder="Nom du candidat *">
+                                </div>
+                            </label>
+                            <label>
+                                <p class="label-title">Prénoms *</p>
+                                <div class="inpt-child-div">
+                                    <input type="text" class="inpt-child" placeholder="Nom du candidat *">
+                                </div>
+                            </label>
+                            <label>
+                                <p class="label-title">Email *</p>
+                                <div class="inpt-child-div">
+                                    <input type="text" class="inpt-child" placeholder="Nom du candidat *">
+                                </div>
+                            </label>
+                            <label>
+                                <p class="label-title">Téléphones *</p>
+                                <div class="inpt-child-div">
+                                    <input type="text" class="inpt-child" placeholder="Nom du candidat *">
+                                </div>
+                            </label>
+
+                            <picture>
+                                <button class="btn-blue">Suivant</button>
+                            </picture>
+                        </form>
+                    </article>
+                </section>
+            </figure>
+
+            <figure id="modale-apercu">
+                <section>
+                    <article class="section-article-picture">
+                        <picture>
+                            <h1>Aperçu du formulaire <span>x</span></h1>
+
+                        </picture>
+                    </article>
+                    <article class="section-article-range">
+
+                        <picture>
+                            <label class="active">
+                                <p>1
+                                </p>
+                                <h4>
+                                    Informations sur l’annonce
+                                </h4>
+                            </label>
+                            <label class="hr">
+                                <hr>
+                            </label>
+                            <label>
+                                <p>2</p>
+                                <h4>
+                                    Documents requis
+                                </h4>
+                            </label>
+                            <label class="hr">
+                                <hr>
+                            </label>
+                            <label>
+                                <p>3</p>
+                                <h4>
+                                    Informations complémentaire
+                                </h4>
+                            </label>
+                        </picture>
+                    </article>
+
+                    <article class="article-form-pop">
+                        <form>
+                            <h2>Documents du candidats</h2>
+                            <p>
+                                <i>?</i>
+                                <span>Formats acceptés: jpeg,png,pdf,doc,docx</span>
+                            </p>
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th><input type="checkbox" name="" id=""></th>
+                                        <th>Bulletin de paie *</th>
+                                        <th>
+                                            vide
+                                        </th>
+                                        <th>
+                                            <p>add</p>
+                                            <p>eye</p>
+                                            <p>edit</p>
+                                            <p>delete</p>
+                                        </th>
+                                    </tr>
+
+                                </thead>
+                            </table>
+                            <h2>Documents du garants</h2>
+                     
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th><input type="checkbox" name="" id=""></th>
+                                        <th>Bulletin de paie *</th>
+                                        <th>
+                                            vide
+                                        </th>
+                                        <th>
+                                            <p>add</p>
+                                            <p>eye</p>
+                                            <p>edit</p>
+                                            <p>delete</p>
+                                        </th>
+                                    </tr>
+
+                                </thead>
+                            </table>
+                            <picture>
+                                <button>Précedent</button>
+                                <button class="btn-blue">Suivant</button>
+                            </picture>
+                        </form>
+                    </article>
+                </section>
+            </figure>
+        </main>
+    </div>
+
+    <script src="Javascript/selectCheckedX.js"></script>
+    <script src="Javascript/mouseTooltip.js"></script>
+    <script src="Javascript/selectCheckOthers.js"></script>
+    <script src="Javascript/selectCheck.js"></script>
+</body>
+
+</html>

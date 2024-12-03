@@ -1,0 +1,36 @@
+#modale-apercu{
+    background: #0000005d;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    left: 0;
+}
+#modale-apercu section{
+    width: 60%;
+    margin: 0 auto;
+    background: #fff;
+}
+
+.article-form-pop form{
+    background: gray;
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+    flex-wrap: wrap;
+    justify-content: left;
+    width: 100%;
+}
+.article-form-pop form label{
+    /* flex: 3; */
+    background: black;
+    width: 32.2%;
+}
+.inpt-child-div{
+    background: red;
+
+}
+.inpt-child{
+    padding: 1em;
+    width: 100%;
+}
