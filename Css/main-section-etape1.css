@@ -35,7 +35,7 @@
     /* background: green; */
     display: flex;
     flex-direction: row;
-    align-items: center;
+    align-items: top;
     justify-content: center;
     width: 100%;
     padding: 2.5em;
@@ -162,7 +162,8 @@
 .tooltip {
     display: none;
     position: absolute;
-    top: 30px; /* Ajuster selon la taille du SVG */
+    top: 30px;
+    /* Ajuster selon la taille du SVG */
     background-color: #f5f5f5;
     color: #333;
     /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); */
@@ -193,20 +194,25 @@
 }
 
 .picture-table {
-    /* background: red; */
     width: 100%;
 }
 
 .table {
     /* background: red; */
     width: 100%;
-
+    /* background: red !important; */
+    gap: 3em;
+    border-collapse: collapse;
 }
 
 .table .tr {
     /* background: green; */
     outline: 1px solid #000;
 
+}
+
+.table tr:nth-last-child(2) {
+    outline: none !important;
 }
 
 .table th {
@@ -219,12 +225,56 @@
 .table tbody {
     /* background: blue; */
     height: 20em;
-    outline: 1px dashed #000;
+    /* outline: 1px dashed #000; */
+}
+
+.td-title p {
+    background: #f0f0f0;
+    padding: 1em;
+    margin: 0 auto;
+    border-radius: 0.5em;
+    width: 90%;
+}
+
+.pic-check {
+    margin: 0 auto;
+
+}
+
+.td-check {
+    width: 2em;
+    height: 2em;
+    accent-color: rgb(5, 156, 5);
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+}
+
+
+.row-td {
+    /* margin: auto !important; */
+}
+
+.table thead tr:first-child {
+    /* background: red; */
+    outline: 1px solid black;
+    border-radius: 0;
+}
+
+.table tbody tr {
+    /* background: red; */
+    outline: 1px solid #5858564D;
+    border-radius: 0.5em;
+}
+.table tbody tr:last-child {
+    /* background: red; */
+    outline: none;
+    border-radius: 0.5em;
 }
 
 .table td {
     /* background: blue; */
-    padding: 1em;
+    /* padding: 1em; */
 }
 
 .mb-2 {
@@ -239,7 +289,7 @@
 
 .apercu-btn .btn-blue:disabled {
     background: #94c9f4;
-
+    cursor: not-allowed;
 }
 
 
@@ -272,12 +322,14 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    flex-wrap: wrap;
     margin: 2em 0;
 }
 
 .btn-picture div {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     gap: 1em;
 }
 
@@ -296,7 +348,7 @@
     border: none;
 }
 
-.inpt-style-label figure p{
+.inpt-style-label figure p {
     font-style: italic;
 }
 
@@ -327,6 +379,6 @@
 .fa-x {
     margin-left: 0.8em;
     font-weight: 600;
-    color: red;
+    color: #333;
     cursor: pointer;
 }

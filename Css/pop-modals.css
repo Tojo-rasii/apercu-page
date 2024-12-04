@@ -1,36 +1,65 @@
-#modale-apercu{
+#modale-apercu {
     background: #0000005d;
-    position: fixed;
+    position: absolute;
     top: 0;
     width: 100%;
-    height: 100%;
+    height: 100rem;
     left: 0;
+    display: none;
 }
-#modale-apercu section{
-    width: 60%;
+
+#modale-apercu section {
+    width: 70%;
     margin: 0 auto;
     background: #fff;
 }
 
-.article-form-pop form{
-    background: gray;
+.article-form-pop form {
+    /* background: gray; */
     display: flex;
     flex-direction: row;
     gap: 1em;
+    row-gap: 2em;
     flex-wrap: wrap;
     justify-content: left;
     width: 100%;
 }
-.article-form-pop form label{
-    /* flex: 3; */
-    background: black;
-    width: 32.2%;
-}
-.inpt-child-div{
-    background: red;
 
+.article-form-pop form label {
+    /* flex: 3; */
+    /* background: black; */
+    width: 32.2%;
+    position: relative;
 }
-.inpt-child{
+
+.inpt-child-div {
+    /* background: red; */
+    z-index: -20000;
+}
+
+.label-title {
+    margin-top: -0.9em;
+    background: #fff;
+    z-index: 999999 !important;
+    margin-left: 1em;
+    padding: 0 0.5em;
+    font-weight: 600;
+    position: absolute;
+}
+
+.inpt-child {
     padding: 1em;
     width: 100%;
+    outline: 1.3px solid #585856;
+    background: none;
+    border: none;
+    border-radius: 0.5em;
+}
+
+.btn-apercu {
+    width: 100%;
+    /* background: red; */
+    padding: 2em 0;
+    display: flex;
+    justify-content: end;
 }

@@ -13,7 +13,7 @@ checkboxes.forEach(checkbox => {
 
             // Ajoute un bouton de suppression
             const closeButton = document.createElement('sub');
-            closeButton.textContent = ' X';
+            // closeButton.textContent = ' X';
             closeButton.classList.add('fa-x');
             closeButton.addEventListener('click', () => {
                 span.remove();

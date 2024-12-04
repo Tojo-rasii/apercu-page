@@ -30,11 +30,12 @@
 .popup-item {
     display: flex;
     flex-direction: row !important;
+    justify-content: left !important;
     align-items: center;
     gap: 1em;
     border-bottom: 1px solid #ccc;
     cursor: pointer;
-    padding: 1em;
+    padding: 1em !important;
 }
 
 .popup-item:hover {
@@ -43,4 +44,21 @@
 
 .popup-item input[type="checkbox"] {
     margin-right: 10px;
+}
+.popup-other {
+    display: flex;
+    flex-direction: row !important;
+    align-items: center;
+    gap: 1em;
+    border-bottom: 1px solid #ccc;
+    cursor: pointer;
+    padding: 1em;
+}
+
+.popup-other:hover {
+    background: #f0f0f0;
+}
+
+.popup-other input[type="checkbox"] {
+    margin-right: 2em;
 }

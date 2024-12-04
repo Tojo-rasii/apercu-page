@@ -1,0 +1,145 @@
+#modale-apercu-secondary{
+    background: #0000005d;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    display: none;
+}
+#modale-apercu-secondary section{
+    width:70%;
+    margin: 0 auto;
+    background: #fff;
+}
+
+.row-text{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.3em !important;
+    line-height: 0.9em !important;
+}
+.color-white{
+    color: #fff;
+}
+.head-apercu {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    /* background: red; */
+    padding: 2em 0;
+}
+
+.modal-hr1 {
+    /* background: red; */
+}
+
+.modal-hr2 {
+    /* background: red; */
+}
+
+.modal-hr1 hr {
+    margin-top: 1em;
+    border: 1px solid #03A84E;
+}
+
+.modal-hr1 hr {
+    margin-top: 1em;
+}
+
+.modal-hr2 hr {
+    margin-top: 1em;
+}
+
+.modal-hr2 hr {
+    margin-top: 1em;
+}
+
+.title-doc {
+    font-weight: 600;
+}
+
+.row-doc {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5em;
+    align-items: center;
+}
+
+.table-doc {
+    /* background: rgb(0, 0, 0); */
+    /* border: 1px solid black; */
+    width: 100%;
+    margin-top: 0 !important;
+}
+
+.table-doc thead tr th {
+    border: 1px solid black;
+    /* background: green; */
+}
+
+.table-doc tr th {
+    /* background: yellow; */
+    border-right: 1px solid black;
+    padding: 1em;
+    font-weight: 550;
+
+}
+
+.table-doc tr th:nth-child(3) {
+    /* background: red; */
+    width: 40%;
+}
+
+.table-doc tr th:last-child {
+    /* background: red; */
+}
+
+.table-doc tr th:nth-child(2) {
+    /* background: green; */
+    text-align: left;
+}
+
+.table-doc tr th input[type='checkbox'] {
+    width: 1.2em;
+    height: 1.2em;
+    accent-color: var(--primary);
+}
+
+.table-doc tr th:last-child {
+    /* background: yellow; */
+    border-right: none;
+
+}
+
+.red {
+    color: rgb(206, 22, 22);
+}
+
+.th-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 1em;
+    align-items: center;
+}
+
+.th-row i {
+    cursor: pointer;
+}
+
+.th-row i:hover {
+    scale: 1.05;
+}
+
+.pop-btn2 {
+    background: red;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 2em 0;
+    width: 100%;
+}
