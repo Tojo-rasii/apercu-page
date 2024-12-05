@@ -10,7 +10,7 @@ document.getElementById("checkbox-others").addEventListener("change", function (
         ["Suggestion 1", "Suggestion 2", "Suggestion 3"].forEach(text => {
             const span = document.createElement("span");
             span.className = "span-select";
-            span.innerHTML = `${text} <sub class="fa-x">×</sub>`;
+            span.innerHTML = `${text} <sub class="fa-x"></sub>`;
             container.appendChild(span);
 
             // Ajouter un événement pour retirer l'élément
