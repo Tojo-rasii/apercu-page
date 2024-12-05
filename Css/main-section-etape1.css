@@ -53,11 +53,11 @@
 }
 
 .hr {
-    position: absolute;
-    bottom: 53%;
+    /* position: absolute; */
+    /* bottom: 53%; */
     /* background: red; */
     width: 43%;
-    padding: 1em;
+    /* padding: 1em; */
 }
 
 .section-article-range picture label.active h4 {
@@ -135,6 +135,7 @@
 .align-center {
     display: flex;
     flex-direction: row;
+    /* background: red; */
     align-items: center;
 }
 
@@ -166,10 +167,30 @@
     /* Ajuster selon la taille du SVG */
     background-color: #f5f5f5;
     color: #333;
-    /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); */
     white-space: nowrap;
     z-index: 100;
+    padding: 10px;
+    border-radius: 2px;
+    /* Facultatif, pour arrondir les coins du tooltip */
 }
+
+.tooltip::before {
+    content: '';
+    position: absolute;
+    top: 22%;
+    /* Placer la flèche juste au-dessus du tooltip */
+    left: 0;
+    /* Centrer la flèche par rapport au tooltip */
+    transform: translateX(-50%);
+    /* Centrer précisément */
+    border-width: 8px;
+    /* Taille de la flèche */
+    border-style: solid;
+    margin-left: -0.45em;
+    border-color: transparent #bebebe transparent transparent;
+    /* Flèche de couleur */
+}
+
 
 /* Afficher le tooltip au survol */
 .span-svg:hover .tooltip {
@@ -194,19 +215,31 @@
 }
 
 .picture-table {
+    /* width: 100%; */
+    /* background: green !important; */
+    /* padding: 1em; */
+    /* height: 2em;
+    max-height: 2em !important; */
+}
+
+.picture-table figure {
     width: 100%;
+    /* background: green !important; */
+    /* padding: 1em; */
+    /* height: 2em;
+    max-height: 2em !important; */
+    overflow-x: auto;
 }
 
 .table {
     /* background: red; */
     width: 100%;
     /* background: red !important; */
-    gap: 3em;
-    border-collapse: collapse;
+    /* gap: 3em; */
+    border-collapse: separate;
 }
 
 .table .tr {
-    /* background: green; */
     outline: 1px solid #000;
 
 }
@@ -224,8 +257,9 @@
 
 .table tbody {
     /* background: blue; */
-    height: 20em;
+    height: max-content;
     /* outline: 1px dashed #000; */
+    border-spacing: 50em !important;
 }
 
 .td-title p {
@@ -236,14 +270,19 @@
     width: 90%;
 }
 
+/* 
+.tr-add-primary{
+    display: none;
+} */
+
 .pic-check {
     margin: 0 auto;
 
 }
 
 .td-check {
-    width: 2em;
-    height: 2em;
+    width: 1.5em;
+    height: 1.5em;
     accent-color: rgb(5, 156, 5);
     margin: 0 auto;
     display: flex;
@@ -253,6 +292,20 @@
 
 .row-td {
     /* margin: auto !important; */
+}
+
+.row-td picture {
+    /* margin: auto !important; */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+}
+
+.row-td picture i:hover {
+    scale: 1.03;
+    cursor: pointer;
 }
 
 .table thead tr:first-child {
@@ -265,7 +318,11 @@
     /* background: red; */
     outline: 1px solid #5858564D;
     border-radius: 0.5em;
+    /* background: green; */
+    height: 0;
+
 }
+
 .table tbody tr:last-child {
     /* background: red; */
     outline: none;
@@ -274,7 +331,7 @@
 
 .table td {
     /* background: blue; */
-    /* padding: 1em; */
+    padding: 1em;
 }
 
 .mb-2 {

@@ -84,3 +84,16 @@
     width: 2em;
     height: 2em;
 }
+
+
+
+
+
+
+.tr-add-primary, .champ, .tr-add {
+    transition: opacity 0.3s ease;
+}
+.hidden {
+    opacity: 0;
+    visibility: hidden;
+}

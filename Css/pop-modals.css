@@ -10,7 +10,7 @@ body.no-scroll {
     height: 100%;
     overflow: auto; 
     left: 0;
-    display: block;
+    display: none;
 }
 
 #modale-apercu section {
@@ -27,6 +27,7 @@ body.no-scroll {
     gap: 1em;
     row-gap: 2em;
     flex-wrap: wrap;
+    padding: 1em;
     justify-content: left;
     width: 100%;
 }
