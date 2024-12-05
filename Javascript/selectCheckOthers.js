@@ -1,43 +1,33 @@
-const checkboxOthers = document.getElementById('checkbox-others');
-const selectedItems = document.getElementById('selected-items-other');
-const noSelectionText = document.getElementById('no-selections');
+document.getElementById("checkbox-others").addEventListener("change", function () {
+    const container = document.getElementById("selected-items-other");
+    const noSelectionsText = document.getElementById("no-selections");
 
-// Liste des textes à afficher
-const additionalTexts = ["Text1", "Text2", "Text3"];
+    if (this.checked) {
+        // Masquer le texte "Autres pièces justificatives"
+        noSelectionsText.style.display = "none";
 
-// Ajouter/retirer des spans dynamiquement
-checkboxOthers.addEventListener('change', () => {
-    console.log('Checkbox checked:', checkboxOthers.checked);  // Vérification de l'état de la checkbox
-    if (checkboxOthers.checked) {
-        // Supprimer le texte "Autres pièces justificatives"
-        noSelectionText.style.display = 'none';
+        // Ajouter les suggestions
+        ["Suggestion 1", "Suggestion 2", "Suggestion 3"].forEach(text => {
+            const span = document.createElement("span");
+            span.className = "span-select";
+            span.innerHTML = `${text} <sub class="fa-x">×</sub>`;
+            container.appendChild(span);
 
-        // Ajouter les spans
-        additionalTexts.forEach((text, index) => {
-            const span = document.createElement('span');
-            span.className = 'span-select';
-            span.innerHTML = `${text} <sub class="fa-x" data-index="${index}">X</sub>`;
-            selectedItems.appendChild(span);
+            // Ajouter un événement pour retirer l'élément
+            span.querySelector(".fa-x").addEventListener("click", function () {
+                container.removeChild(span);
+                // Vérifier si le conteneur est vide après suppression
+                if (container.children.length === 0) {
+                    noSelectionsText.style.display = "block"; // Réafficher le texte
+                    document.getElementById("checkbox-others").checked = false; // Décocher la case
+                }
+            });
         });
-        console.log('Spans ajoutés:', additionalTexts);  // Vérification des spans ajoutés
     } else {
-        // Réinitialiser si décoché
-        selectedItems.innerHTML = '';
-        noSelectionText.style.display = 'block';
-        console.log('Tous les spans supprimés');
-    }
-});
+        // Réafficher le texte "Autres pièces justificatives"
+        noSelectionsText.style.display = "block";
 
-// Supprimer un span lorsque "X" est cliqué
-selectedItems.addEventListener('click', (e) => {
-    if (e.target.classList.contains('fa-x')) {
-        const spanToRemove = e.target.closest('span');
-        selectedItems.removeChild(spanToRemove);
-
-        // Si tous les spans sont supprimés, afficher à nouveau le texte par défaut
-        if (selectedItems.children.length === 0) {
-            noSelectionText.style.display = 'block';
-        }
-        console.log('Span supprimé');
+        // Supprimer toutes les suggestions
+        container.innerHTML = "";
     }
 });

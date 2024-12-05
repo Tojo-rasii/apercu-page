@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
     const trAddPrimary = document.querySelector(".tr-add-primary");
+    const trAddPrimaryTd = document.querySelector(".tr-add-primary td");
     const addPrimaryChampBtn = document.querySelector("#add-primary-champ");
     const tbody = document.querySelector(".table tbody");
 
@@ -21,7 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
                                                     <label class="select-label">
                                                         <img class="selected-icon" src="Asset/123.png"
                                                             alt="Selected Icon" width="20" height="20">
-                                                        <input type="text" class="search-input"
+                                                        <input type="text" tabindex="0" class="search-input"
                                                             placeholder="Champ numérique" readonly>
                                                         <i class="down-i">
                                                             <svg width="13" height="13" viewBox="0 0 6 3" fill="none"
@@ -106,8 +107,8 @@ document.addEventListener("DOMContentLoaded", () => {
             // Réafficher le champ primaire
             trAddPrimary.style.display = "block";
 
-            // Ajouter colspan à la première cellule du champ primaire
-            trAddPrimary.setAttribute("colspan", "5");
+            // // Ajouter colspan à la première cellule du champ primaire
+            // trAddPrimaryTd.setAttribute("colspan", "5");
 
             allTr.forEach(tr => tr.style.display = "none");
         }

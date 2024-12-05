@@ -28,7 +28,7 @@
 
 @media screen and (max-width: 930px) {
     html {
-        font-size: 0.9em;
+        font-size: 0.8em;
     }
 
 
@@ -46,10 +46,12 @@
 
 
 
-.table-parent{
-    /* background: green !important; */
-    display: none !important;
-}
+    .table-parent {
+        /* background: green !important; */
+        overflow: auto;
+        /* display: none !important; */
+    }
+
     #modale-apercu section {
         width: 100%;
         height: max-content;
@@ -120,7 +122,13 @@
     }
 
     #modale-apercu section label {
-        flex: 1 1 calc(50% - 1em);
+        /* flex: 1 1 calc(50% - 1em); */
+        flex: 1 1 100%;
+    }
+
+    #next {
+        width: 100%;
+        text-align: center;
     }
 
     #add-champ {
@@ -143,6 +151,16 @@
 
     .align-center {
         position: relative;
+    }
+
+    .pop-btn2 {
+        /* background: red; */
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+        justify-content: space-between;
+        padding: 2em 0;
+        width: 100%;
     }
 
     .span-svg {

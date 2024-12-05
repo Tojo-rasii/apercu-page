@@ -78,7 +78,9 @@
     /* background: rgb(0, 0, 0); */
     /* border: 1px solid black; */
     width: 100%;
+    border-collapse: collapse;
     margin-top: 0 !important;
+    /* background: green; */
 }
 
 .table-doc thead tr th {
@@ -86,9 +88,18 @@
     /* background: green; */
 }
 
+
+
+.table-parent {
+    /* background: green !important; */
+    /* display: none !important; */
+    width: 100%;
+
+}
+
 .table-doc tr th {
     /* background: yellow; */
-    border-right: 1px solid black;
+    /* border-right: 1px solid black; */
     padding: 1em;
     font-weight: 550;
 
@@ -116,7 +127,7 @@
 
 .table-doc tr th:last-child {
     /* background: yellow; */
-    border-right: none;
+    /* border-right: none; */
 
 }
 
@@ -141,7 +152,7 @@
 }
 
 .pop-btn2 {
-    background: red;
+    /* background: red; */
     display: flex;
     flex-direction: row;
     justify-content: space-between;

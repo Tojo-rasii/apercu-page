@@ -236,6 +236,7 @@
     width: 100%;
     /* background: red !important; */
     /* gap: 3em; */
+border-spacing: 1em; /* Espace entre les lignes */
     border-collapse: separate;
 }
 
