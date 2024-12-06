@@ -32,6 +32,11 @@
     }
 
 
+    .section-article-range picture {
+        /* background: green; */
+
+        padding: 1.5em 0.5em !important;
+    }
 
     .head-apercu {
         display: flex;
@@ -53,9 +58,9 @@
     }
 
     #modale-apercu section {
-        width: 100%;
+        width: 95%;
         height: max-content;
-        margin: 0 auto;
+        margin: 0.5em auto;
         background: #fff;
     }
 
@@ -108,9 +113,9 @@
     }
 
     #modale-apercu-secondary section {
-        width: 100%;
+        width: 95%;
         height: max-content;
-        margin: 0 auto;
+        margin: 0.5em auto;
         background: #fff;
     }
 
