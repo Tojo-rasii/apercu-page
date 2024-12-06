@@ -97,8 +97,13 @@
 .table-parent {
     /* background: green !important; */
     /* display: none !important; */
-    width: 100%;
+    width: 100% !important;
 
+}
+
+.table-parent figure {
+    /* background: red; */
+    width: 100%;
 }
 
 .table-doc tr th {

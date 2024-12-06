@@ -94,7 +94,7 @@
                         </picture>
 
                         <picture>
-                            <label class="inpt-style-label"> 
+                            <label class="inpt-style-label">
                                 <figure>
                                     <div class="p-text">
                                         <p id="no-selection">Aucun élément sélectionné</p>
@@ -194,9 +194,9 @@
                                         <tr class="last-tr">
                                             <td class="tr-add-primary" colspan="5" style="text-align: center;">
                                                 <legend>
-                                                <p class="mb-2">Aucun champ personnalisé n’est encore ajouté.</p>
-                                                <button class="btn-blue" id="add-primary-champ">Ajouter nouveau
-                                                    champ</button>
+                                                    <p class="mb-2">Aucun champ personnalisé n’est encore ajouté.</p>
+                                                    <button class="btn-blue" id="add-primary-champ">Ajouter nouveau
+                                                        champ</button>
                                                 </legend>
                                             </td>
                                         </tr>
@@ -274,56 +274,88 @@
                             <picture class="head-apercu">
                                 <h2 class="title-doc">Informations personnelles</h2>
                             </picture>
+                            <picture>
+                                <label>
+                                    <p class="label-title">Nom <span class="red">*</span></p>
+                                    <div class="inpt-child-div">
+                                        <input type="text" class="inpt-child" placeholder="Nom du candidat *">
+                                    </div>
+                                </label>
+                                <label>
+                                    <p class="label-title">Prénoms <span class="red">*</span></p>
+                                    <div class="inpt-child-div">
+                                        <input type="text" class="inpt-child" placeholder="Prénoms du candidat *">
+                                    </div>
+                                </label>
+                                <label>
+                                    <p class="label-title">Email <span class="red">*</span></p>
+                                    <div class="inpt-child-div">
+                                        <input type="text" class="inpt-child" placeholder="Adresse email *">
+                                    </div>
+                                </label>
+                            </picture>
+                            <picture>
+                                <label>
+                                    <p class="label-title">Téléphone <span class="red">*</span></p>
+                                    <div class="inpt-child-div">
+                                        <input type="text" class="inpt-child" placeholder="Numero de téléphone *">
+                                    </div>
+                                </label>
+                                <label>
+                                    <p class="label-title">Statut professionnel <span class="red">*</span></p>
+                                    <div class="inpt-child-div">
+                                        <input type="text" class="inpt-child"
+                                            placeholder="Choisir un statut professionnel *" readonly>
+                                        <i class="arrow-idown">
+                                            <svg width="16" height="11" viewBox="0 0 16 11" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M6.98486 9.94878L0.344238 3.16835C-0.114746 2.69971 -0.114746 1.94189 0.344238 1.47823L1.44775 0.351485C1.90674 -0.117162 2.64893 -0.117162 3.10303 0.351485L7.81006 5.15761L12.5171 0.351485C12.9761 -0.117162 13.7183 -0.117162 14.1724 0.351485L15.2759 1.47823C15.7349 1.94688 15.7349 2.70469 15.2759 3.16835L8.63525 9.94878C8.18604 10.4174 7.44385 10.4174 6.98486 9.94878Z"
+                                                    fill="#585856" />
+                                            </svg>
 
-                            <label>
-                                <p class="label-title">Nom <span class="red">*</span></p>
-                                <div class="inpt-child-div">
-                                    <input type="text" class="inpt-child" placeholder="Nom du candidat *">
-                                </div>
-                            </label>
-                            <label>
-                                <p class="label-title">Prénoms <span class="red">*</span></p>
-                                <div class="inpt-child-div">
-                                    <input type="text" class="inpt-child" placeholder="Prénoms du candidat *">
-                                </div>
-                            </label>
-                            <label>
-                                <p class="label-title">Email <span class="red">*</span></p>
-                                <div class="inpt-child-div">
-                                    <input type="text" class="inpt-child" placeholder="Adresse email *">
-                                </div>
-                            </label>
-                            <label>
-                                <p class="label-title">Téléphone <span class="red">*</span></p>
-                                <div class="inpt-child-div">
-                                    <input type="text" class="inpt-child" placeholder="Numero de téléphone *">
-                                </div>
-                            </label>
-                            <label>
-                                <p class="label-title">Statut professionnel <span class="red">*</span></p>
-                                <div class="inpt-child-div">
-                                    <input type="text" class="inpt-child"
-                                        placeholder="Choisir un statut professionnel *">
-                                </div>
-                            </label>
-                            <label>
-                                <p class="label-title">Revenus <span class="red">*</span></p>
-                                <div class="inpt-child-div">
-                                    <input type="text" class="inpt-child" placeholder="Revenus *">
-                                </div>
-                            </label>
-                            <label>
-                                <p class="label-title">Type de contrat * <span class="red">*</span></p>
-                                <div class="inpt-child-div">
-                                    <input type="text" class="inpt-child" placeholder="Type de contrat *">
-                                </div>
-                            </label>
-                            <label>
-                                <p class="label-title">Durée estimée du séjour <span class="red">*</span></p>
-                                <div class="inpt-child-div">
-                                    <input type="text" class="inpt-child" placeholder="Durée estimée du séjour *">
-                                </div>
-                            </label>
+                                        </i>
+                                    </div>
+                                </label>
+                                <label>
+                                    <p class="label-title">Revenus <span class="red">*</span></p>
+                                    <div class="inpt-child-div">
+                                        <input type="text" class="inpt-child" placeholder="Revenus *">
+                                    </div>
+                                </label>
+                            </picture>
+                            <picture class="picture-last">
+                                <label>
+                                    <p class="label-title">Type de contrat * <span class="red">*</span></p>
+                                    <div class="inpt-child-div">
+                                        <input type="text" class="inpt-child" placeholder="Type de contrat *" readonly>
+                                        <i class="arrow-idown">
+                                            <svg width="16" height="11" viewBox="0 0 16 11" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M6.98486 9.94878L0.344238 3.16835C-0.114746 2.69971 -0.114746 1.94189 0.344238 1.47823L1.44775 0.351485C1.90674 -0.117162 2.64893 -0.117162 3.10303 0.351485L7.81006 5.15761L12.5171 0.351485C12.9761 -0.117162 13.7183 -0.117162 14.1724 0.351485L15.2759 1.47823C15.7349 1.94688 15.7349 2.70469 15.2759 3.16835L8.63525 9.94878C8.18604 10.4174 7.44385 10.4174 6.98486 9.94878Z"
+                                                    fill="#585856" />
+                                            </svg>
+
+                                        </i>
+                                    </div>
+                                </label>
+                                <label>
+                                    <p class="label-title">Durée estimée du séjour <span class="red">*</span></p>
+                                    <div class="inpt-child-div">
+                                        <input type="text" class="inpt-child" placeholder="Durée estimée du séjour *" readonly>
+                                        <i class="arrow-idown">
+                                            <svg width="16" height="11" viewBox="0 0 16 11" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M6.98486 9.94878L0.344238 3.16835C-0.114746 2.69971 -0.114746 1.94189 0.344238 1.47823L1.44775 0.351485C1.90674 -0.117162 2.64893 -0.117162 3.10303 0.351485L7.81006 5.15761L12.5171 0.351485C12.9761 -0.117162 13.7183 -0.117162 14.1724 0.351485L15.2759 1.47823C15.7349 1.94688 15.7349 2.70469 15.2759 3.16835L8.63525 9.94878C8.18604 10.4174 7.44385 10.4174 6.98486 9.94878Z"
+                                                    fill="#585856" />
+                                            </svg>
+
+                                        </i>
+                                    </div>
+                                </label>
+                            </picture>
 
 
 
@@ -334,32 +366,45 @@
                             <picture class="head-apercu">
                                 <h2 class="title-doc">Garant</h2>
                             </picture>
-                            <label>
-                                <p class="label-title">Nom <span class="red">*</span></p>
-                                <div class="inpt-child-div">
-                                    <input type="text" class="inpt-child" placeholder="Nom du garant *">
-                                </div>
-                            </label>
-                            <label>
-                                <p class="label-title">Lien avec le candidat * *</p>
-                                <div class="inpt-child-div">
-                                    <input type="text" class="inpt-child"
-                                        placeholder="Lien du garant avec le candidat *">
-                                </div>
-                            </label>
-                            <label>
-                                <p class="label-title">Revenu Mensuel *</p>
-                                <div class="inpt-child-div">
-                                    <input type="text" class="inpt-child" placeholder="Revenu mensuel *">
-                                </div>
-                            </label>
-                            <label>
-                                <p class="label-title">Téléphone *</p>
-                                <div class="inpt-child-div">
-                                    <input type="text" class="inpt-child" placeholder="Numero de téléphone *">
-                                </div>
-                            </label>
 
+                            <picture>
+                                <label>
+                                    <p class="label-title">Nom <span class="red">*</span></p>
+                                    <div class="inpt-child-div">
+                                        <input type="text" class="inpt-child" placeholder="Nom du garant *">
+                                    </div>
+                                </label>
+                                <label>
+                                    <p class="label-title">Lien avec le candidat <span class="red">*</span></p>
+                                    <div class="inpt-child-div">
+                                        <input type="text" class="inpt-child"
+                                            placeholder="Lien du garant avec le candidat *" readonly>
+                                        <i class="arrow-idown">
+                                            <svg width="16" height="11" viewBox="0 0 16 11" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M6.98486 9.94878L0.344238 3.16835C-0.114746 2.69971 -0.114746 1.94189 0.344238 1.47823L1.44775 0.351485C1.90674 -0.117162 2.64893 -0.117162 3.10303 0.351485L7.81006 5.15761L12.5171 0.351485C12.9761 -0.117162 13.7183 -0.117162 14.1724 0.351485L15.2759 1.47823C15.7349 1.94688 15.7349 2.70469 15.2759 3.16835L8.63525 9.94878C8.18604 10.4174 7.44385 10.4174 6.98486 9.94878Z"
+                                                    fill="#585856" />
+                                            </svg>
+
+                                        </i>
+                                    </div>
+                                </label>
+                                <label>
+                                    <p class="label-title">Revenu Mensuel <span class="red">*</span></p>
+                                    <div class="inpt-child-div">
+                                        <input type="text" class="inpt-child" placeholder="Revenu mensuel *">
+                                    </div>
+                                </label>
+                            </picture>
+                            <picture class="picture-last">
+                                <label>
+                                    <p class="label-title">Téléphone <span class="red">*</span></p>
+                                    <div class="inpt-child-div">
+                                        <input type="text" class="inpt-child" placeholder="Numero de téléphone *">
+                                    </div>
+                                </label>
+                            </picture>
                             <picture class="btn-apercu">
                                 <span class="btn-blue" id="next">Suivant</span>
                             </picture>
@@ -829,7 +874,7 @@
             </figure>
         </main>
     </div>
-<script src="Javascript/multi-select.js"></script>
+    <script src="Javascript/multi-select.js"></script>
     <script src="Javascript/selectCheckedX.js"></script>
     <script src="Javascript/mouseTooltip.js"></script>
     <script src="Javascript/selectCheckOthers.js"></script>
