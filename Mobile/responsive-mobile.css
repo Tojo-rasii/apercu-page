@@ -78,6 +78,24 @@
         width: 95.5%;
     }
 
+    .article-form-pop form picture {
+        /* background: red; */
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 2em !important;
+        justify-content: left;
+    }
+
+
+    .article-form-pop form label {
+        /* flex: 1 1 calc(33.33% - 1em); */
+        /* background: silver; */
+        width: 100% !important;
+        /* width: 32.2%; */
+        position: relative;
+    }
+
     #i-notif {
         width: 5em;
         height: 5em;
