@@ -10,6 +10,7 @@
     align-items: center;
     /* background: yellow; */
     width: 90%;
+    font-size: 0.9em;
     margin: 0 auto;
     border-radius: 0.5em;
     background: #EEEEEE;
@@ -31,9 +32,19 @@
     border-radius: 4px;
     margin: 0 auto;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    display: none;
+    /* display: none; */
     z-index: 10;
 }
+.popups {
+    display: block;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+.popups.show {
+    display: block;
+    opacity: 1;
+}
+
 
 .popup-item {
     padding: 10px;

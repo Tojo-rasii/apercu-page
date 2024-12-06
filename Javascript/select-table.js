@@ -1,39 +1,52 @@
-document.addEventListener('DOMContentLoaded', () => {
-  document.querySelectorAll('.search-container').forEach(container => {
-    const input = container.querySelector('.search-input');
-    const popup = container.querySelector('.popups');
-    const selectedIcon = container.querySelector('.selected-icon');
-    const items = container.querySelectorAll('.popup-item');
+document.addEventListener("DOMContentLoaded", () => {
+  // Fonction d'initialisation
+  const initPopupSelect = () => {
+      const searchContainers = document.querySelectorAll(".search-container");
 
-    // Vérifie si les éléments existent avant de continuer
-    if (!input || !popup || !selectedIcon || items.length === 0) {
-      console.error('Structure DOM incomplète dans .search-container');
-      return;
-    }
+      searchContainers.forEach(container => {
+          const searchInput = container.querySelector(".search-input");
+          const popup = container.querySelector(".popups");
+          const popupItems = container.querySelectorAll(".popup-item");
+          const selectedIcon = container.querySelector(".selected-icon");
+          const selectLabel = container.querySelector(".select-label");
 
-    // Afficher la popup
-    input.addEventListener('click', () => {
-      popup.style.display = 'block';
-    });
+          // Montrer/Masquer le popup au clic sur le champ
+          selectLabel.addEventListener("click", (event) => {
+              event.stopPropagation(); // Empêcher la propagation pour éviter la fermeture instantanée
+              popup.style.display = popup.style.display === "block" ? "none" : "block";
+          });
 
-    // Cacher la popup lorsqu'on clique en dehors
-    document.addEventListener('click', (e) => {
-      if (!container.contains(e.target)) {
-        popup.style.display = 'none';
-      }
-    });
+          // Filtrer les options en fonction de l'entrée utilisateur
+          searchInput.addEventListener("input", () => {
+              const filter = searchInput.value.toLowerCase();
+              popupItems.forEach(item => {
+                  const text = item.querySelector("span").textContent.toLowerCase();
+                  item.style.display = text.includes(filter) ? "flex" : "none";
+              });
+          });
 
-    // Mettre à jour l'image et le texte sélectionnés
-    items.forEach(item => {
-      item.addEventListener('click', () => {
-        const imgSrc = item.getAttribute('data-img');
-        const text = item.querySelector('span').textContent;
+          // Gérer la sélection d'une option
+          popupItems.forEach(item => {
+              item.addEventListener("click", () => {
+                  const selectedText = item.querySelector("span").textContent;
+                  const selectedImg = item.dataset.img;
 
-        selectedIcon.src = imgSrc;
-        input.value = text;
+                  // Mettre à jour l'icône et le champ sélectionné
+                  selectedIcon.src = selectedImg;
+                  searchInput.value = selectedText;
 
-        popup.style.display = 'none';
+                  // Fermer le popup
+                  popup.style.display = "none";
+              });
+          });
+
+          // Fermer le popup en cliquant à l'extérieur
+          document.addEventListener("click", () => {
+              popup.style.display = "none";
+          });
       });
-    });
-  });
+  };
+
+  // Appeler la fonction d'initialisation
+  initPopupSelect();
 });

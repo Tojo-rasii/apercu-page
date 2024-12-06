@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
         toastNotification.style.display = "block"; // Affiche le toast
         setTimeout(() => {
             toastNotification.style.display = "none"; // Cache le toast après 15s
-        }, 5000);
+        }, 3000);
     }
 
     // Événement bouton "Non"

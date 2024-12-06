@@ -236,8 +236,10 @@
     width: 100%;
     /* background: red !important; */
     /* gap: 3em; */
-border-spacing: 1em; /* Espace entre les lignes */
+    border-spacing: 1em;
+    /* Espace entre les lignes */
     border-collapse: separate;
+
 }
 
 .table .tr {
@@ -254,6 +256,7 @@ border-spacing: 1em; /* Espace entre les lignes */
     font-weight: normal;
     padding: 1em;
     border-right: 1px solid #000;
+    text-wrap: nowrap;
 }
 
 .table tbody {
@@ -334,7 +337,13 @@ border-spacing: 1em; /* Espace entre les lignes */
     /* background: blue; */
     padding: 1em;
 }
-
+#add-champ{
+    width: 90%;
+    /* background: red; */
+    display: flex;
+    justify-self: center;
+    justify-content: center;
+}
 .mb-2 {
     margin-bottom: 1em;
 }
@@ -440,3 +449,7 @@ border-spacing: 1em; /* Espace entre les lignes */
     color: #333;
     cursor: pointer;
 }
+
+/* .last-tr {
+    background: red;
+} */
