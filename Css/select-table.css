@@ -36,7 +36,7 @@
     z-index: 10;
 }
 .popups {
-    display: block;
+    display: none;
     opacity: 1;
     transition: opacity 0.3s ease;
 }
@@ -47,7 +47,7 @@
 
 
 .popup-item {
-    padding: 10px;
+    /* padding: 10px; */
     cursor: pointer;
 }
 
@@ -71,7 +71,6 @@
     display: flex;
     align-items: center;
     /* margin-bottom: 10px; */
-    font-size: 16px;
 }
 
 .selected-item img {

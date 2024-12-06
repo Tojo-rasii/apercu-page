@@ -7,7 +7,7 @@ document.getElementById("checkbox-others").addEventListener("change", function (
         noSelectionsText.style.display = "none";
 
         // Ajouter les suggestions
-        ["Suggestion 1", "Suggestion 2", "Suggestion 3"].forEach(text => {
+        ["Trois dernières fiches de paie", "Contrat de travail", "Justificatif de domicile"].forEach(text => {
             const span = document.createElement("span");
             span.className = "span-select";
             span.innerHTML = `${text} <sub class="fa-x"></sub>`;

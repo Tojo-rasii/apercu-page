@@ -49,6 +49,9 @@
         overflow: hidden !important;
     }
 
+    .picture-table figure {
+        overflow-x: auto;
+    }
 
 
     .table-parent {
