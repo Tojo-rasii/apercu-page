@@ -1,0 +1,9 @@
+/* Masquer le dernier tr au départ */
+#last-tr {
+    display: none;
+}
+
+/* Afficher le tr 'champ' lorsqu'il est ajouté */
+.tr-champ {
+    display: table-row;
+}

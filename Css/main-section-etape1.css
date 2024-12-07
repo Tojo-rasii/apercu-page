@@ -231,6 +231,12 @@
     /* overflow-x: auto; */
 }
 
+.absolute {
+    background: red !important;
+    /* position: absolute; */
+    left: 50%;
+}
+
 .table {
     /* background: red; */
     width: 100%;
@@ -239,13 +245,15 @@
     border-spacing: 1em;
     /* Espace entre les lignes */
     border-collapse: separate;
-
+position: relative;
 }
 
 .table .tr {
     outline: 1px solid #000;
 
 }
+
+
 
 .table tr:nth-last-child(2) {
     outline: none !important;

@@ -1,52 +1,64 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // Fonction d'initialisation
-  const initPopupSelect = () => {
-      const searchContainers = document.querySelectorAll(".search-container");
+    const selectedItems = document.querySelectorAll(".selected-item2");
+    const popupContainers = document.querySelectorAll(".popups");
+    const selectedIcons = document.querySelectorAll(".selected-icon");
+    const searchInputs = document.querySelectorAll(".search-input2");
 
-      searchContainers.forEach(container => {
-          const searchInput = container.querySelector(".search-input");
-          const popup = container.querySelector(".popups");
-          const popupItems = container.querySelectorAll(".popup-item");
-          const selectedIcon = container.querySelector(".selected-icon");
-          const selectLabel = container.querySelector(".select-label");
+    // Basculer la liste déroulante au clic sur chaque input
+    searchInputs.forEach((input, index) => {
+        input.addEventListener("click", (e) => {
+            e.stopPropagation(); // Empêche la propagation pour éviter de fermer immédiatement
+            popupContainers[index].classList.toggle("visible");
+        });
+    });
 
-          // Montrer/Masquer le popup au clic sur le champ
-          selectLabel.addEventListener("click", (event) => {
-              event.stopPropagation(); // Empêcher la propagation pour éviter la fermeture instantanée
-              popup.style.display = popup.style.display === "block" ? "none" : "block";
-          });
+    // Gérer la sélection d'un élément dans la popup
+    const popupItems = document.querySelectorAll(".popup-item2");
+    popupItems.forEach((item) => {
+        item.addEventListener("click", () => {
+            const newIcon = item.getAttribute("data-img");
+            const newText = item.querySelector("span").textContent;
 
-          // Filtrer les options en fonction de l'entrée utilisateur
-          searchInput.addEventListener("input", () => {
-              const filter = searchInput.value.toLowerCase();
-              popupItems.forEach(item => {
-                  const text = item.querySelector("span").textContent.toLowerCase();
-                  item.style.display = text.includes(filter) ? "flex" : "none";
-              });
-          });
+            // Trouver l'index de la popup actuelle
+            const popupContainer = item.closest(".popups");
+            const index = Array.from(popupContainer.children).indexOf(item);
 
-          // Gérer la sélection d'une option
-          popupItems.forEach(item => {
-              item.addEventListener("click", () => {
-                  const selectedText = item.querySelector("span").textContent;
-                  const selectedImg = item.dataset.img;
+            // Vérifier que l'index est valide
+            if (index >= 0 && selectedIcons[index] && searchInputs[index]) {
+                // Mettre à jour l'icône et le texte pour l'élément correspondant
+                selectedIcons[index].src = newIcon;
+                searchInputs[index].value = newText;
 
-                  // Mettre à jour l'icône et le champ sélectionné
-                  selectedIcon.src = selectedImg;
-                  searchInput.value = selectedText;
+                // Fermer la popup
+                popupContainers[index].classList.remove("visible");
+            }
+        });
+    });
 
-                  // Fermer le popup
-                  popup.style.display = "none";
-              });
-          });
+    // Fermer la liste déroulante si on clique à l'extérieur
+    document.addEventListener("click", (e) => {
+        selectedItems.forEach((selectedItem, index) => {
+            if (!selectedItem.contains(e.target) && !popupContainers[index].contains(e.target)) {
+                popupContainers[index].classList.remove("visible");
+            }
+        });
+    });
 
-          // Fermer le popup en cliquant à l'extérieur
-          document.addEventListener("click", () => {
-              popup.style.display = "none";
-          });
-      });
-  };
+    // Ajouter la fonctionnalité de toggle pour chaque popup
+    popupContainers.forEach((popupContainer, index) => {
+        const popupItems = popupContainer.querySelectorAll(".popup-item2");
+        popupItems.forEach((item) => {
+            item.addEventListener("click", () => {
+                const newIcon = item.getAttribute("data-img");
+                const newText = item.querySelector("span").textContent;
 
-  // Appeler la fonction d'initialisation
-  initPopupSelect();
+                // Mettre à jour l'icône et le texte
+                selectedIcons[index].src = newIcon;
+                searchInputs[index].value = newText;
+
+                // Fermer la popup
+                popupContainer.classList.remove("visible");
+            });
+        });
+    });
 });
