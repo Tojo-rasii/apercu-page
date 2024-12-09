@@ -226,7 +226,8 @@
     width: 100%;
     /* background: green !important; */
     /* padding: 1em; */
-    /* height: 2em;
+        overflow-x: auto;
+        /* height: 2em;
     max-height: 2em !important; */
     /* overflow-x: auto; */
 }
