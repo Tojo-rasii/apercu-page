@@ -74,6 +74,8 @@
         padding: 1em;
         left: 2%;
         margin: 0;
+    transform: translate(0,0);
+
         margin-bottom: 2%;
         width: 95.5%;
     }

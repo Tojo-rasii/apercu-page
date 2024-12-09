@@ -6,7 +6,7 @@
     height: 100%;
     overflow: auto;
     left: 0;
-    display: none;
+    display: block;
 }
 
 #modale-apercu-secondary section {
@@ -17,6 +17,11 @@
     margin-top: 1em;
     margin-bottom: 1em;
 
+}
+
+.vide {
+    /* background: red; */
+    min-width: 15em !important;
 }
 
 .row-width {
@@ -105,6 +110,7 @@
 
 .table-parent {
     /* background: green !important; */
+    overflow: auto;
     /* display: none !important; */
     width: 100% !important;
 

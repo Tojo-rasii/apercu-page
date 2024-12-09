@@ -3,7 +3,8 @@
     bottom: 0;
     background: #03A84E;
     padding: 1.5em;
-    left: 32%;
+    left: 50%;
+    transform: translate(-50%,-50%);
     margin: 2em;
     display: none;
     border-radius: 0.5em;
