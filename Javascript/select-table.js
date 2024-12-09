@@ -1,4 +1,3 @@
-document.addEventListener("DOMContentLoaded", () => {
     const selectedItems = document.querySelectorAll(".selected-item2");
     const popupContainers = document.querySelectorAll(".popups");
     const selectedIcons = document.querySelectorAll(".selected-icon");
@@ -61,4 +60,3 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         });
     });
-});
