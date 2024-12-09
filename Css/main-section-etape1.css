@@ -170,14 +170,14 @@
     white-space: nowrap;
     z-index: 100;
     padding: 10px;
-    border-radius: 2px;
+    border-radius: 0;
     /* Facultatif, pour arrondir les coins du tooltip */
 }
 
 .tooltip::before {
     content: '';
     position: absolute;
-    top: 22%;
+    top: 23%;
     /* Placer la flèche juste au-dessus du tooltip */
     left: 0;
     /* Centrer la flèche par rapport au tooltip */
@@ -186,7 +186,7 @@
     border-width: 8px;
     /* Taille de la flèche */
     border-style: solid;
-    margin-left: -0.45em;
+    margin-left: -0.40em;
     border-color: transparent #bebebe transparent transparent;
     /* Flèche de couleur */
 }
@@ -245,12 +245,13 @@
     border-spacing: 1em;
     /* Espace entre les lignes */
     border-collapse: separate;
-position: relative;
+    position: relative;
 }
 
 .table .tr {
-    outline: 1px solid #000;
-
+    outline: 1px solid #58585680;
+    font-weight: 500;
+    text-align: left;
 }
 
 
@@ -263,7 +264,7 @@ position: relative;
     /* background: blue; */
     font-weight: normal;
     padding: 1em;
-    border-right: 1px solid #000;
+    border-right: 1px solid #58585680;
     text-wrap: nowrap;
 }
 
@@ -279,13 +280,16 @@ position: relative;
     padding: 1em;
     margin: 0 auto;
     border-radius: 0.5em;
-    width: 90%;
+    width: 100%;
+    color: #585856;
 }
 
-/* 
+
 .tr-add-primary{
-    display: none;
-} */
+    height: 15em;
+    border: 2px dashed #58585680;
+    border-top: none;
+}
 
 .pic-check {
     margin: 0 auto;
@@ -441,6 +445,10 @@ position: relative;
     justify-content: left;
 }
 
+.popup label {
+    font-weight: 700;
+}
+
 .span-select {
     background: #CCCCCC;
     font-size: 0.9em;
@@ -452,6 +460,7 @@ position: relative;
     align-items: center;
     padding: 0.8em;
     width: max-content;
+    font-style: italic;
 }
 
 .fa-x {

@@ -9,17 +9,18 @@
     justify-content: space-between;
     align-items: center;
     /* background: yellow; */
-    width: 20em;
+    width: 22em;
     font-size: 1em;
     margin: 0 auto;
     border-radius: 0.5em;
-    /* background: #EEEEEE; */
+    background: #EEEEEE;
 }
 
 .select-label input {
     outline: none !important;
     border: none !important;
     background: none !important;
+    color: #585856;
 }
 
 .popups {

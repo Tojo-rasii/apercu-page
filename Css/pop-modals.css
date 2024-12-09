@@ -18,7 +18,13 @@ body.no-scroll {
     width: 70%;
     height: max-content;
     margin: 0 auto;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
     background: #fff;
+}
+
+.text-uppercase{
+    text-transform: uppercase;
 }
 
 .article-form-pop form {

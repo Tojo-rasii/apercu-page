@@ -40,12 +40,13 @@
     padding: 0.35em 0.5em;
     justify-content: space-between;
     cursor: pointer;
-    width: 20em;
+    width: 22em;
     margin: 0 auto;
 }
 
 .no-items-selected {
     /* background: red; */
+    color: #585856;
     text-wrap: nowrap;
     width: 100%;
 }
@@ -110,6 +111,7 @@
     border-radius: 5px;
     position: relative;
     text-wrap: nowrap;
+    font-style: italic;
     /* text-overflow: ellipsis; */
     /* overflow-x: hidden; */
 }

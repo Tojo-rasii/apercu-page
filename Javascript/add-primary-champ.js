@@ -8,6 +8,7 @@ document.getElementById('add-primary-champ').addEventListener('click', function 
     // Ajouter la première ligne .champ
     addNewChamp(tableBody);
 
+
     // Afficher la ligne .tr-add
     document.querySelector('.tr-add').style.display = '';
 
@@ -32,7 +33,7 @@ function addNewChamp(tableBody) {
     // Contenu de la nouvelle ligne
     newRow.innerHTML = `
         <td class="td-title">
-          <p>Nouveau champ</p>
+          <p contenteditable>Nouveau champ</p>
         </td>
         <td>
          <div class="search-container">
@@ -47,7 +48,7 @@ function addNewChamp(tableBody) {
                      </i>
                  </label>
                  <div class="popups">
-                     <div class="popup-item" data-img="Asset/image.png">
+                     <div class="popup-item" data-img="Asset/T.png">
                          <img src="Asset/T.png" alt="Icon 1" width="20" height="20">
                          <span>Text simple</span>
                      </div>
@@ -55,7 +56,7 @@ function addNewChamp(tableBody) {
                          <img src="Asset/down.png" alt="Icon 2" width="20" height="20">
                          <span>Champ de selection</span>
                      </div>
-                     <div class="popup-item" data-img="Asset/list.png">
+                     <div class="popup-item" data-img="Asset/image.png">
                          <img src="Asset/image.png" alt="Icon 3" width="20" height="20">
                          <span>Champ numérique</span>
                      </div>

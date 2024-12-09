@@ -179,13 +179,17 @@
         position: relative;
     }
 
-    .pop-btn2 {
+    .pop-btn2 div{
         /* background: red; */
         display: flex;
         flex-direction: column;
         gap: 1em;
         justify-content: space-between;
         padding: 2em 0;
+        width: 100%;
+    }
+
+    .pop-btn2 div button{
         width: 100%;
     }
 

@@ -19,6 +19,15 @@
 
 }
 
+.row-width {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    row-gap: 1.5em;
+}
+
 .row-text {
     display: flex;
     flex-direction: row;
@@ -67,7 +76,7 @@
 }
 
 .title-doc {
-    font-weight: 600;
+    font-weight: 700;
 }
 
 .row-doc {
@@ -162,9 +171,15 @@
 
 .pop-btn2 {
     /* background: red; */
+    padding: 2em 0;
+    width: 100%;
+}
+
+.pop-btn2 div {
+    /* background: red; */
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding: 2em 0;
+    align-items: center;
     width: 100%;
 }

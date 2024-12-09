@@ -45,10 +45,11 @@
 button {
     padding: 0.8em 1.8em;
     font-family: 'poppins';
-    border-radius: 0.3em;
+    border-radius: 0.5em;
     cursor: pointer;
     font-weight: 400;
     font-size: 1em;
+    text-wrap: nowrap;
 }
 
 textarea {
