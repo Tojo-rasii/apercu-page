@@ -7,37 +7,37 @@ document.getElementById("checkbox-others").addEventListener("change", function (
         autreInptCandidat.style.display = "none";
     }
 });
-  // Récupération des éléments nécessaires
-  const input = document.getElementById('input-justificatif');
-  const pictureContainer = document.querySelector('#selected-items-others .row-select');
+// Récupération des éléments nécessaires
+const inputCandidat = document.getElementById('input-justificatif');
+const pictureContainerCandidat = document.querySelector('#selected-items-others .row-select');
 
-  // Fonction pour ajouter un span dynamique
-  function addSpan(text) {
-      // Création d'un nouvel élément span
-      const span = document.createElement('span');
-      span.className = 'span-select';
-      span.innerHTML = `${text} <sub class='fa-x'></sub>`;
-      
-      // Ajout d'un gestionnaire pour supprimer le span au clic sur "x"
-      span.querySelector('sub').addEventListener('click', () => {
-          span.remove();
-      });
+// Fonction pour ajouter un span dynamique
+function addSpanCandidat(text) {
+    // Création d'un nouvel élément span
+    const span = document.createElement('span');
+    span.className = 'span-select';
+    span.innerHTML = `${text} <sub class='fa-x'></sub>`;
 
-      // Ajout du span dans le conteneur
-      pictureContainer.appendChild(span);
-  }
+    // Ajout d'un gestionnaire pour supprimer le span au clic sur "x"
+    span.querySelector('sub').addEventListener('click', () => {
+        span.remove();
+    });
 
-  // Gestion de l'événement 'Enter' ou perte de focus
-  input.addEventListener('keydown', (event) => {
-      if (event.key === 'Enter' && input.value.trim() !== '') {
-          addSpan(input.value.trim());
-          input.value = ''; // Réinitialise le champ après ajout
-      }
-  });
+    // Ajout du span dans le conteneur
+    pictureContainerCandidat.appendChild(span);
+}
 
-  input.addEventListener('blur', () => {
-      if (input.value.trim() !== '') {
-          addSpan(input.value.trim());
-          input.value = ''; // Réinitialise le champ après ajout
-      }
-  });
+// Gestion de l'événement 'Enter' ou perte de focus
+inputCandidat.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter' && inputCandidat.value.trim() !== '') {
+        addSpanCandidat(inputCandidat.value.trim());
+        inputCandidat.value = ''; // Réinitialise le champ après ajout
+    }
+});
+
+inputCandidat.addEventListener('blur', () => {
+    if (inputCandidat.value.trim() !== '') {
+        addSpanCandidat(inputCandidat.value.trim());
+        inputCandidat.value = ''; // Réinitialise le champ après ajout
+    }
+});
