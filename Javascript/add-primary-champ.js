@@ -55,7 +55,10 @@ function addNewChamp(tableBody) {
         </td>
 
          <td class="td-title">
-          <p contenteditable>Nouveau champ</p>
+          <label class="select-label">
+                     <input type="text" class="search-input" placeholder="Nouveau champ">
+                   
+                </label>
         </td>
 
 

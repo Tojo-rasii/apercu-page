@@ -8,8 +8,8 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    /* background: yellow; */
-    width: 22em;
+    /* background: yellow !important; */
+    width: 15em;
     font-size: 1em;
     margin: 0 auto;
     border-radius: 0.5em;
