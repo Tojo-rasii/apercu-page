@@ -1,33 +1,43 @@
 document.getElementById("checkbox-others").addEventListener("change", function () {
-    const container = document.getElementById("selected-items-other");
-    const noSelectionsText = document.getElementById("no-selections");
+    const autreInptCandidat = document.getElementById("autre-inpt-candidat");
 
     if (this.checked) {
-        // Masquer le texte "Autres pièces justificatives"
-        noSelectionsText.style.display = "none";
-
-        // Ajouter les suggestions
-        ["Trois dernières fiches de paie", "Contrat de travail", "Justificatif de domicile"].forEach(text => {
-            const span = document.createElement("span");
-            span.className = "span-select";
-            span.innerHTML = `${text} <sub class="fa-x"></sub>`;
-            container.appendChild(span);
-
-            // Ajouter un événement pour retirer l'élément
-            span.querySelector(".fa-x").addEventListener("click", function () {
-                container.removeChild(span);
-                // Vérifier si le conteneur est vide après suppression
-                if (container.children.length === 0) {
-                    noSelectionsText.style.display = "block"; // Réafficher le texte
-                    document.getElementById("checkbox-others").checked = false; // Décocher la case
-                }
-            });
-        });
+        autreInptCandidat.style.display = "block";
     } else {
-        // Réafficher le texte "Autres pièces justificatives"
-        noSelectionsText.style.display = "block";
-
-        // Supprimer toutes les suggestions
-        container.innerHTML = "";
+        autreInptCandidat.style.display = "none";
     }
 });
+  // Récupération des éléments nécessaires
+  const input = document.getElementById('input-justificatif');
+  const pictureContainer = document.querySelector('#selected-items-others .row-select');
+
+  // Fonction pour ajouter un span dynamique
+  function addSpan(text) {
+      // Création d'un nouvel élément span
+      const span = document.createElement('span');
+      span.className = 'span-select';
+      span.innerHTML = `${text} <sub class='fa-x'></sub>`;
+      
+      // Ajout d'un gestionnaire pour supprimer le span au clic sur "x"
+      span.querySelector('sub').addEventListener('click', () => {
+          span.remove();
+      });
+
+      // Ajout du span dans le conteneur
+      pictureContainer.appendChild(span);
+  }
+
+  // Gestion de l'événement 'Enter' ou perte de focus
+  input.addEventListener('keydown', (event) => {
+      if (event.key === 'Enter' && input.value.trim() !== '') {
+          addSpan(input.value.trim());
+          input.value = ''; // Réinitialise le champ après ajout
+      }
+  });
+
+  input.addEventListener('blur', () => {
+      if (input.value.trim() !== '') {
+          addSpan(input.value.trim());
+          input.value = ''; // Réinitialise le champ après ajout
+      }
+  });

@@ -12,8 +12,10 @@
     <link rel="stylesheet" href="Css/main-section-etape1.css">
     <link rel="stylesheet" href="Css/pop-modals2.css">
     <link rel="stylesheet" href="Css/toast-notification.css">
+    <link rel="stylesheet" href="Css/select-add-garant.css">
     <link rel="stylesheet" href="Mobile/responsive-mobile.css">
     <link rel="stylesheet" href="Css/pop-notification.css">
+    <link rel="stylesheet" href="Css/tooltips-garant.css">
     <link rel="stylesheet" href="Css/addChamp.css">
     <link rel="stylesheet" href="Css/multi-select.css">
     <!-- FontAwesome 6.2.0 CSS -->
@@ -90,7 +92,7 @@
                 <article class="apercu-form">
                     <form>
                         <picture class="picture-title-apercu">
-                            <p>Pièces justificatives demandées</p>
+                            <p>Pièces justificatives pour le Candidat</p>
                             <p>Sélectionnez les documents que vous souhaitez demander aux candidats.</p>
                         </picture>
 
@@ -113,13 +115,21 @@
                                         <input type="checkbox" value="Bulletin de paie"> Bulletin de paie
                                     </label>
                                     <label class="popup-item">
-                                        <input type="checkbox" value="Garant"> Garant
+                                        <input type="checkbox" value="Justificatif d’identité"> Justificatif d’identité
                                     </label>
                                     <label class="popup-item">
-                                        <input type="checkbox" value="Plusieurs mois d’avance"> Plusieurs mois d’avance
+                                        <input type="checkbox" value="Justificatif de revenus"> Justificatif de revenus
                                     </label>
                                     <label class="popup-item">
-                                        <input type="checkbox" value="Déclaration d’impôt"> Déclaration d’impôt
+                                        <input type="checkbox" value="Quittance de loyer"> Quittance de loyer
+                                    </label>
+                                    <label class="popup-item">
+                                        <input type="checkbox" value="Plusieurs mois d’avance">
+                                        Plusieurs mois d’avance
+                                    </label>
+                                    <label class="popup-item">
+                                        <input type="checkbox" value="Déclaration d’impôt">
+                                        Déclaration d’impôt
                                     </label>
                                     <label class="popup-item">
                                         <input type="checkbox" value="Recommandation du dernier bailleur">
@@ -146,23 +156,128 @@
 
                                 </div>
                             </figure>
+                            <div class="inpt-style-label" id="autre-inpt-candidat" style="display: none;">
+                                <div>
+                                    <input type="text" id="input-justificatif"
+                                        placeholder="Autres pièces justificatives">
+                                </div>
 
-                            <label class="inpt-style-label">
+                                <div class="selected">
+                                    <figcaption id="selected-items-others">
+                                        <picture class="row-select">
+                                            <!-- Les spans seront ajoutés ici -->
+
+                                        </picture>
+
+                                    </figcaption>
+                                </div>
+
+                            </div>
+                            <!-- <label class="inpt-style-label">
                                 <figure>
                                     <div class="p-text">
                                         <p id="no-selections">Autres pièces justificatives</p>
                                     </div>
                                     <div class="selected">
                                         <figcaption id="selected-items-other">
-                                            <!-- Les spans seront ajoutés ici -->
+                                            Les spans seront ajoutés ici
 
                                         </figcaption>
                                     </div>
                                 </figure>
-                            </label>
+                            </label> -->
 
 
                         </picture>
+
+                        <!-- GARANT -->
+                        <div class="garant">
+                            <picture class="picture-title-apercu">
+                                <p>Pièces justificatives pour le Garant</p>
+                                <p>Sélectionnez les documents que vous souhaitez demander concernant les informations du
+                                    Garant.</p>
+                            </picture>
+
+                            <picture>
+                                <label class="inpt-style-label">
+                                    <figure>
+                                        <div class="p-text">
+                                            <p id="no-selection-garant">Aucun élément sélectionné</p>
+                                        </div>
+                                        <div class="selected">
+                                            <figcaption id="selected-items-garant">
+                                                <!-- Les spans seront ajoutés ici -->
+                                            </figcaption>
+                                        </div>
+                                    </figure>
+                                </label>
+                                <figure class="search-container">
+                                    <div class="popup">
+                                        <label class="popup-item-garant">
+                                            <input type="checkbox" value="Bulletin de paie"> Bulletin de paie
+                                        </label>
+                                        <label class="popup-item-garant">
+                                            <input type="checkbox" value="Justificatif d’identité"> Justificatif
+                                            d’identité
+                                        </label>
+                                        <label class="popup-item-garant">
+                                            <input type="checkbox" value="Justificatif de revenus"> Justificatif de
+                                            revenus
+                                        </label>
+                                        <label class="popup-item-garant">
+                                            <input type="checkbox" value="Attestation de garantie visale"> Attestation
+                                            de garantie visale
+                                        </label>
+                                        <label class="popup-item-garant">
+                                            <input type="checkbox" value="Impôts sur les revenus">
+                                            Impôts sur les revenus
+                                        </label>
+
+                                        <label class="popup-other align-center">
+                                            <span>
+                                                <input type="checkbox" id="checkbox-others-garant">Autres
+                                            </span>
+                                            <span class="span-svg">
+                                                <svg width="25" height="25" viewBox="0 0 34 34" id="svg-about-garant"
+                                                    fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M17 0C7.61182 0 0 7.61456 0 17C0 26.3909 7.61182 34 17 34C26.3882 34 34 26.3909 34 17C34 7.61456 26.3882 0 17 0ZM17 7.54032C18.59 7.54032 19.879 8.82931 19.879 10.4194C19.879 12.0094 18.59 13.2984 17 13.2984C15.41 13.2984 14.121 12.0094 14.121 10.4194C14.121 8.82931 15.41 7.54032 17 7.54032ZM20.8387 24.9516C20.8387 25.4059 20.4704 25.7742 20.0161 25.7742H13.9839C13.5296 25.7742 13.1613 25.4059 13.1613 24.9516V23.3065C13.1613 22.8522 13.5296 22.4839 13.9839 22.4839H14.8065V18.0968H13.9839C13.5296 18.0968 13.1613 17.7285 13.1613 17.2742V15.629C13.1613 15.1748 13.5296 14.8065 13.9839 14.8065H18.371C18.8252 14.8065 19.1935 15.1748 19.1935 15.629V22.4839H20.0161C20.4704 22.4839 20.8387 22.8522 20.8387 23.3065V24.9516Z"
+                                                        fill="#2892F5" />
+                                                </svg>
+                                                <sub id="sub-garant" class="tooltip">Sélectionner les autres pièces
+                                                    justificatives
+                                                    que vous voulez demander aux candidats</sub>
+                                            </span>
+                                        </label>
+
+
+
+                                    </div>
+                                </figure>
+
+
+
+                                <div class="inpt-style-label" id="autre-inpt" style="display: none;">
+                                    <div>
+                                        <input type="text" id="input-justificatif-garant"
+                                            placeholder="Autres pièces justificatives">
+                                    </div>
+
+                                    <div class="selected">
+                                        <figcaption id="selected-items-others-garant">
+                                            <picture class="row-select">
+                                                <!-- Les spans seront ajoutés ici -->
+
+                                            </picture>
+
+                                        </figcaption>
+                                    </div>
+
+                                </div>
+
+
+                            </picture>
+                        </div>
 
                         <picture class="picture-title-apercu">
                             <p>Créer des champs personnalisé pour la candidature</p>
@@ -496,7 +611,7 @@
                                                 <th><input type="checkbox" name="" id=""></th>
                                                 <th>Bulletin de paie <span class="red">*</span></th>
                                                 <th class="vide">
-                                                    
+
                                                 </th>
                                                 <th class="th-row">
                                                     <i><svg width="22" height="22" viewBox="0 0 22 22" fill="none"
@@ -546,7 +661,7 @@
                                                 <th><input type="checkbox" name="" id=""></th>
                                                 <th>Trois dernières fiches de paie <span class="red">*</span></th>
                                                 <th class="vide">
-                                                    
+
                                                 </th>
                                                 <th class="th-row">
                                                     <i><svg width="22" height="22" viewBox="0 0 22 22" fill="none"
@@ -596,7 +711,7 @@
                                                 <th><input type="checkbox" name="" id=""></th>
                                                 <th>Contrat de travail <span class="red">*</span></th>
                                                 <th class="vide">
-                                                    
+
                                                 </th>
                                                 <th class="th-row">
                                                     <i><svg width="22" height="22" viewBox="0 0 22 22" fill="none"
@@ -646,7 +761,7 @@
                                                 <th><input type="checkbox" name="" id=""></th>
                                                 <th>Justificatif de domicile <span class="red">*</span></th>
                                                 <th class="vide">
-                                                    
+
                                                 </th>
                                                 <th class="th-row">
                                                     <i><svg width="22" height="22" viewBox="0 0 22 22" fill="none"
@@ -711,7 +826,7 @@
                                                 <th><input type="checkbox" name="" id=""></th>
                                                 <th>Pièce d’identité <span class="red">*</span></th>
                                                 <th class="vide">
-                                                    
+
                                                 </th>
                                                 <th class="th-row">
                                                     <i><svg width="22" height="22" viewBox="0 0 22 22" fill="none"
@@ -762,7 +877,7 @@
                                                 <th>Attestation de garantie
                                                     visale <span class="red">*</span></th>
                                                 <th class="vide">
-                                                    
+
                                                 </th>
                                                 <th class="th-row">
                                                     <i><svg width="22" height="22" viewBox="0 0 22 22" fill="none"
@@ -888,17 +1003,23 @@
             </figure>
         </main>
     </div>
+    <script src="Javascript/script.js"></script>
     <script src="Javascript/multi-select.js"></script>
-    <script src="Javascript/selectCheckedX.js"></script>
     <script src="Javascript/mouseTooltip.js"></script>
     <script src="Javascript/selectCheckOthers.js"></script>
     <script src="Javascript/select-table.js" defer></script>
     <script src="Javascript/selectCheck.js"></script>
+    <script src="Javascript/selectCheckedX.js"></script>
+    <script src="Javascript/select-add-garant.js"></script>
+    <script src="Javascript/selectCheckOthersGarant.js"></script>
+
+
     <script src="Javascript/toast-notification.js"></script>
+
+
     <!-- <script src="Javascript/add-champ.js"></script> -->
     <script src="Javascript/pop-modal1.js"></script>
     <script src="Javascript/pop-modal2.js"></script>
-    <script src="Javascript/script.js"></script>
     <script src="Javascript/add-primary-champ.js"></script>
     <!-- <script>
      
