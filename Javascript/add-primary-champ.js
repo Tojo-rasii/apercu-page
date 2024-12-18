@@ -32,9 +32,33 @@ function addNewChamp(tableBody) {
 
     // Contenu de la nouvelle ligne
     newRow.innerHTML = `
-        <td class="td-title">
+         <td>
+         <div class="search-container-section">
+          <div class="selected-item-section">
+                <label class="select-label">
+                     <input type="text" class="search-input" placeholder="Candidat" readonly>
+                     <i class="down-i">
+                         <svg width="10" height="10" viewBox="0 0 6 3" fill="none" xmlns="http://www.w3.org/2000/svg">
+                             <path d="M5.59628 0H0.403717C0.0444951 0 -0.135116 0.382449 0.119165 0.606582L2.71444 2.89594C2.87185 3.03469 3.12815 3.03469 3.28556 2.89594L5.88084 0.606582C6.13512 0.382449 5.9555 0 5.59628 0Z" fill="#585856" />
+                         </svg>
+                     </i>
+                </label>
+                <div class="popSection hidden">
+        <div class="popup-item" data-value="Candidat">
+          <span>Candidat</span>
+        </div>
+        <div class="popup-item" data-value="Garant">
+          <span>Garant</span>
+        </div>
+                 </div>
+                 </div>
+        </td>
+
+         <td class="td-title">
           <p contenteditable>Nouveau champ</p>
         </td>
+
+
         <td>
          <div class="search-container">
              <div class="selected-item">
@@ -79,6 +103,7 @@ function addNewChamp(tableBody) {
              </div>
          </div>
         </td>
+
 
 
         <td>
@@ -274,3 +299,6 @@ function addNewChamp(tableBody) {
 
 }
 
+
+
+  
