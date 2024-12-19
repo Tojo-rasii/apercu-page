@@ -35,7 +35,7 @@ function addNewChamp(tableBody) {
          <td>
          <div class="search-container-section">
           <div class="selected-item-section">
-                <label class="select-label">
+                <label class="select-label-section">
                      <input type="text" class="search-input" placeholder="Candidat" readonly>
                      <i class="down-i">
                          <svg width="10" height="10" viewBox="0 0 6 3" fill="none" xmlns="http://www.w3.org/2000/svg">
