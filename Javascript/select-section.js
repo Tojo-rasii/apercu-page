@@ -15,7 +15,7 @@ document.addEventListener("click", function (e) {
 
   // Si l'utilisateur clique sur un input
   if (input) {
-    const popSection = input.closest(".select-label").parentElement.querySelector(".popSection");
+    const popSection = input.closest(".select-label-section").parentElement.querySelector(".popSection");
 
     // Basculer la visibilité de la liste déroulante associée
     if (popSection) {
