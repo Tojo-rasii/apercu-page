@@ -1,20 +1,27 @@
 document.addEventListener("click", function (e) {
-  // Trouver la liste déroulante à partir de l'élément cliqué
-  const label = e.target.closest(".select-label");
+  // Trouver l'élément cliqué
+  const input = e.target.closest(".search-input");
   const popupItem = e.target.closest(".popup-item");
 
-  // Fermer toutes les popSection avant d'effectuer une action
-  document.querySelectorAll(".popSection").forEach(pop => pop.classList.add("hidden"));
+  // Vérifier si l'utilisateur clique dans une liste déroulante spécifique
+  const activePopSection = e.target.closest(".popSection");
 
-  // Si l'utilisateur clique sur un label (ou son contenu)
-  if (label) {
-    const input = label.querySelector(".search-input");
-    const popSection = label.parentElement.querySelector(".popSection");
+  // Fermer toutes les popSections sauf celle sur laquelle on interagit
+  document.querySelectorAll(".popSection").forEach(pop => {
+    if (pop !== activePopSection) {
+      pop.classList.add("hidden");
+    }
+  });
 
-    // Basculer la visibilité de la liste
+  // Si l'utilisateur clique sur un input
+  if (input) {
+    const popSection = input.closest(".select-label").parentElement.querySelector(".popSection");
+
+    // Basculer la visibilité de la liste déroulante associée
     if (popSection) {
       popSection.classList.toggle("hidden");
     }
+    return; // Arrêter ici pour éviter de fermer la liste après le toggle
   }
 
   // Si un élément de la liste est cliqué
@@ -27,7 +34,7 @@ document.addEventListener("click", function (e) {
       input.value = popupItem.getAttribute("data-value");
     }
 
-    // Fermer la liste
+    // Fermer la liste déroulante
     popSection.classList.add("hidden");
   }
 });

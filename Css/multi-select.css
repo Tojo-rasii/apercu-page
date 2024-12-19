@@ -36,6 +36,7 @@
     border-radius: 0.5em;
     display: flex;
     flex-direction: row;
+    gap: 0.5em;
     align-items: center;
     padding: 0.35em 0.5em;
     justify-content: space-between;
@@ -48,11 +49,13 @@
     /* background: red; */
     color: #585856;
     text-wrap: nowrap;
-    width: 100%;
+   width: 100vw;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .display-selected {
-    /* background: red; */
+    /* background: red !important; */
     overflow-x: auto;
     width: 22em;
     height: 2.8em;

@@ -66,7 +66,7 @@ function addNewChamp(tableBody) {
          <div class="search-container">
              <div class="selected-item">
                  <label class="select-label">
-                     <img class="selected-icon" src="Asset/123.png" alt="Selected Icon" width="20" height="20">
+                     <img class="selected-icon" src="Asset/123.png" alt="Selected Icon" width="15" height="15">
                      <input type="text" class="search-input" placeholder="Champ numérique" readonly>
                      <i class="down-i">
                          <svg width="10" height="10" viewBox="0 0 6 3" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -119,14 +119,11 @@ function addNewChamp(tableBody) {
                         <figcaption class="display-selected">
                             <!-- Les éléments sélectionnés apparaîtront ici -->
                         </figcaption>
-                        <span class="arrow-icon">
-                            <svg width="10" height="10" viewBox="0 0 6 3"
-                                fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M5.59628 0H0.403717C0.0444951 0 -0.135116 0.382449 0.119165 0.606582L2.71444 2.89594C2.87185 3.03469 3.12815 3.03469 3.28556 2.89594L5.88084 0.606582C6.13512 0.382449 5.9555 0 5.59628 0Z"
-                                    fill="#585856" />
-                            </svg>
-                        </span>
+                        <i class="down-i">
+                         <svg width="10" height="10" viewBox="0 0 6 3" fill="none" xmlns="http://www.w3.org/2000/svg">
+                             <path d="M5.59628 0H0.403717C0.0444951 0 -0.135116 0.382449 0.119165 0.606582L2.71444 2.89594C2.87185 3.03469 3.12815 3.03469 3.28556 2.89594L5.88084 0.606582C6.13512 0.382449 5.9555 0 5.59628 0Z" fill="#585856" />
+                         </svg>
+                     </i>
                     </div>
 
                     <div class="popups-possibility">
