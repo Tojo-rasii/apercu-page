@@ -1,0 +1,36 @@
+.max-champs-message {
+    text-align: center;
+    margin-top: 10px;
+    /* background: red; */
+    width: 100%;
+}
+
+.max-champs-message div {
+    border: 1px solid #5858564D !important;
+    border-top: 1.1em solid var(--primary) !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+    border-top-left-radius: 1.2em;
+    border-top-right-radius: 1.2em;
+    padding: 2.5em;
+}
+
+.max-champs-message div p {
+    font-size: 1.1em;
+}
+
+#obtain-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: background-color 0.3s;
+    width: max-content;
+}
+
+#obtain-button:hover {
+    background-color: #0056b3;
+}

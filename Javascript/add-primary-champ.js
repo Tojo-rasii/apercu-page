@@ -5,6 +5,13 @@ document.querySelector('.tr-add').style.display = 'none';
 document.getElementById('add-primary-champ').addEventListener('click', function () {
     const tableBody = document.getElementById('table-body');
 
+
+       // Vérifier le nombre actuel de champs
+    //    if (countChamps() >= 6) {
+    //     alert("Vous ne pouvez pas ajouter plus de 6 champs !");
+    //     return;
+    // }
+
     // Ajouter la première ligne .champ
     addNewChamp(tableBody);
 
@@ -16,13 +23,67 @@ document.getElementById('add-primary-champ').addEventListener('click', function 
     document.querySelector('.last-tr').style.display = 'none';
 });
 
+
+// Fonction pour compter le nombre actuel de champs
+// function countChamps() {
+//     return document.querySelectorAll('#table-body .champ').length;
+// }
+
 // Événement sur le bouton "Ajouter nouveau champ" de .tr-add
 document.getElementById('add-champ').addEventListener('click', function () {
     const tableBody = document.getElementById('table-body');
+    const champs = tableBody.querySelectorAll('.champ');
 
+   
+    // Vérifier le nombre actuel de champs
+    // if (countChamps() >= 6) {
+    //     alert("Vous ne pouvez pas ajouter plus de 6 champs !");
+    //     return;
+    // }
     // Ajouter une nouvelle ligne .champ
+    // if (champs.length < 6) {
+    //     addNewChamp(tableBody);
+    // }
+
     addNewChamp(tableBody);
+
+        // Si le nombre de champs atteint 6, afficher le div HTML
+        // Si le nombre de champs atteint 6, afficher le div HTML
+    if (champs.length === 1) { // La prochaine sera la 6ème
+        displayMaxChampsMessage(tableBody);
+    }
 });
+
+function displayMaxChampsMessage(tableBody) {
+    // Créer une nouvelle ligne
+    const messageRow = document.createElement('tr');
+    messageRow.classList.add('max-champs-message');
+
+    // Ajouter une cellule avec colspan="6"
+    messageRow.innerHTML = `
+        <td colspan="6" style="text-align: center;">
+            <div style="margin: 10px 0;">
+                <p>Vous avez atteint le nombre maximal de champs personnalisés pouvant être ajoutés gratuitement.</p>
+                <button id="obtain-button" class='btn-blue'>Obtenir plus de champ</button>
+            </div>
+        </td>
+    `;
+
+    // Ajouter la nouvelle ligne au tableau
+    tableBody.appendChild(messageRow);
+
+    // Désactiver le bouton d'ajout
+    document.getElementById('add-champ').disabled = true;
+
+    // Ajouter un événement au bouton "Obtenir"
+    document.getElementById('obtain-button').addEventListener('click', function () {
+        // Supprimer la limitation
+        messageRow.remove();
+        document.getElementById('add-champ').disabled = false;
+    });
+}
+
+
 
 // Fonction pour ajouter une nouvelle ligne .champ
 function addNewChamp(tableBody) {
