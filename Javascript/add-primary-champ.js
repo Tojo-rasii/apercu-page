@@ -6,7 +6,7 @@ document.getElementById('add-primary-champ').addEventListener('click', function 
     const tableBody = document.getElementById('table-body');
 
 
-       // Vérifier le nombre actuel de champs
+    // Vérifier le nombre actuel de champs
     //    if (countChamps() >= 6) {
     //     alert("Vous ne pouvez pas ajouter plus de 6 champs !");
     //     return;
@@ -34,7 +34,7 @@ document.getElementById('add-champ').addEventListener('click', function () {
     const tableBody = document.getElementById('table-body');
     const champs = tableBody.querySelectorAll('.champ');
 
-   
+
     // Vérifier le nombre actuel de champs
     // if (countChamps() >= 6) {
     //     alert("Vous ne pouvez pas ajouter plus de 6 champs !");
@@ -47,14 +47,27 @@ document.getElementById('add-champ').addEventListener('click', function () {
 
     addNewChamp(tableBody);
 
-        // Si le nombre de champs atteint 6, afficher le div HTML
-        // Si le nombre de champs atteint 6, afficher le div HTML
-    if (champs.length === 1) { // La prochaine sera la 6ème
-        displayMaxChampsMessage(tableBody);
-    }
+    // Si le nombre de champs atteint 6, afficher le div HTML
+    // Si le nombre de champs atteint 6, afficher le div HTML
+    checkMaxChamps(tableBody);
 });
 
-function displayMaxChampsMessage(tableBody) {
+
+// Fonction pour vérifier la limite des champs
+let checkMaxChamps = function (tableBody) {
+    const champs = document.querySelectorAll('.champ');
+
+    // Si le nombre de champs atteint 5, afficher un message
+    if (champs.length === 5) {
+        displayMaxChampsMessage(tableBody);
+    }
+};
+
+
+// Fonction pour supprimer le message si le nombre de champs est inférieur à 5
+
+
+let displayMaxChampsMessage = function (tableBody) {
     // Créer une nouvelle ligne
     const messageRow = document.createElement('tr');
     messageRow.classList.add('max-champs-message');
@@ -62,7 +75,7 @@ function displayMaxChampsMessage(tableBody) {
     // Ajouter une cellule avec colspan="6"
     messageRow.innerHTML = `
         <td colspan="6" style="text-align: center;">
-            <div style="margin: 10px 0;">
+            <div>
                 <p>Vous avez atteint le nombre maximal de champs personnalisés pouvant être ajoutés gratuitement.</p>
                 <button id="obtain-button" class='btn-blue'>Obtenir plus de champ</button>
             </div>
@@ -73,13 +86,19 @@ function displayMaxChampsMessage(tableBody) {
     tableBody.appendChild(messageRow);
 
     // Désactiver le bouton d'ajout
-    document.getElementById('add-champ').disabled = true;
+    // document.getElementById('add-champ').disabled = true;
+    document.querySelector('.tr-add').style.visibility = 'hidden';
 
     // Ajouter un événement au bouton "Obtenir"
     document.getElementById('obtain-button').addEventListener('click', function () {
         // Supprimer la limitation
         messageRow.remove();
-        document.getElementById('add-champ').disabled = false;
+        // document.getElementById('add-champ').disabled = false;
+        document.querySelector('.tr-add').style.visibility = 'visible';
+        // document.querySelector('.tr-add').removeEventListener('click', enforceMaxChamps);
+
+        // Supprimer complètement la fonction de limitation
+        checkMaxChamps = () => { };
     });
 }
 
@@ -258,6 +277,16 @@ function addNewChamp(tableBody) {
             document.querySelector('.last-tr').style.display = '';
             document.querySelector('.tr-add').style.display = 'none';
         }
+
+        const champRow = event.target.closest('tr');
+        champRow.remove();
+
+        // Vérifier si le message de maximum est présent
+        const messageRow = document.querySelector('.max-champs-message');
+        if (messageRow) {
+            messageRow.remove();
+            document.querySelector('.tr-add').style.visibility = 'visible';
+        }
     });
 
     // Ajouter le comportement pour le menu déroulant
@@ -362,4 +391,3 @@ function addNewChamp(tableBody) {
 
 
 
-  
