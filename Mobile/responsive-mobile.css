@@ -198,4 +198,10 @@
     .span-svg {
         position: initial;
     }
+
+    
+.th-primary{
+    flex: 1 50% !important;
+    /* background: red; */
+}
 }
