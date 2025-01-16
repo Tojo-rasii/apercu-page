@@ -86,6 +86,7 @@ input:read-only {
 
 body {
     background: var(--secondary);
+    overflow-x: hidden;
 }
 
 #main {

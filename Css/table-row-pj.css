@@ -1,0 +1,54 @@
+.picture-row-table-candidat-pj{
+    /* background: red; */
+}
+.table-pj{
+    /* background: red; */
+}
+.thead-pj{
+    /* background: green; */
+}
+.tr-pj{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.th-pj{
+    border: 1px solid #585856;
+    padding: 1em;
+}
+
+.flex-1{
+    flex: 1;
+}
+
+.tr-add-pj {
+    /* height: 15em; */
+    border: 2px dashed #58585680;
+    width: 100%;
+    border-top: none;
+}
+.col-tr-add-pj{
+    /* background: red; */
+    padding: 5em;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+}
+.col-tr-add-pj p{
+    /* background: green; */
+    text-wrap: wrap;
+    width:100%;
+    text-align: center;
+    line-height: 1.5em;
+    color: #585856;
+    font-size: 1.1em;
+}
+.col-tr-add-pj button{
+    line-height: 1.5em;
+    text-wrap: wrap;
+}
