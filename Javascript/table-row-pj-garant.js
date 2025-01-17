@@ -1,25 +1,24 @@
-console.log('Have a nice day !');
+console.log('Have a nice day garant !');
 
-const btnAddPj = document.querySelector('.btn-add-pj');
-const tbodyPj = document.querySelector('.tbody-pj');
-const trAddPj = document.querySelector('.tr-add-pj');
+const btnAddPjGrt = document.querySelector('.btn-add-pj-garant');
+const trAddPjGrt = document.querySelector('.tr-add-pj-garant');
+const tbodyPjGrt = document.querySelector('.tbody-pj-garant');
 
-btnAddPj.addEventListener('click', function(){
+
+
+btnAddPjGrt.addEventListener('click', function () {
     // alert('red');
+    trAddPjGrt.style.display = 'none';
 
-    trAddPj.style.display = 'none';
+    const divTrSelectGarant = document.createElement('div')
+    divTrSelectGarant.classList.add('tr-add-select-pj-garant');
 
-    // TABLE
-
-    const divTrSelect = document.createElement('div')
-    divTrSelect.classList.add('tr-add-select-pj');
-
-    divTrSelect.innerHTML = `
+    divTrSelectGarant.innerHTML = `
                                  <div class="th-pj th-primary">
                                          <figure class="select-pj">
-                                            <label class="select-label-pj">
-                                                <p class="p-select-pj">Bulletin de paie</p>
-                                                <i class="svg-down">
+                                            <label class="select-label-pj-garant">
+                                                <p class="p-select-pj-garant">Bulletin de paie</p>
+                                                <i class="svg-down-garant">
                                                     <svg width="15" height="7" viewBox="0 0 8 3" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                         <path d="M6.64288 0H0.896441C0.498902 0 0.300133 0.382449 0.581537 0.606582L3.45364 2.89594C3.62784 3.03469 3.91148 3.03469 4.08568 2.89594L6.95778 0.606582C7.23919 0.382449 7.04042 0 6.64288 0Z" fill="#585856"/>
                                                         </svg>
@@ -28,27 +27,27 @@ btnAddPj.addEventListener('click', function(){
                                             </label>
 
                                             <!-- Pop label pj -->
-                                             <div class="pop-select-pj">
+                                             <div class="pop-select-pj-garant">
                                                 <div class="col-pop-pj">
-                                                    <picture class="p-select-pop-pj" data-value="Bulletin de paie">
+                                                    <picture class="p-select-pop-pj-garant" data-value="Bulletin de paie">
                                                         <p>Bulletin de paie</p>
                                                     </picture>
-                                                    <picture class="p-select-pop-pj" data-value="Justificatif d’identité">
+                                                    <picture class="p-select-pop-pj-garant" data-value="Justificatif d’identité">
                                                         <p>Justificatif d’identité</p>
                                                     </picture>
-                                                    <picture class="p-select-pop-pj" data-value="Justificatif de revenus">
+                                                    <picture class="p-select-pop-pj-garant" data-value="Justificatif de revenus">
                                                         <p>Justificatif de revenus</p>
                                                     </picture>
-                                                    <picture class="p-select-pop-pj" data-value="Quittance de loyer">
+                                                    <picture class="p-select-pop-pj-garant" data-value="Quittance de loyer">
                                                         <p>Quittance de loyer</p>
                                                     </picture>
-                                                    <picture class="p-select-pop-pj" data-value="Plusieurs mois d’avance">
+                                                    <picture class="p-select-pop-pj-garant" data-value="Plusieurs mois d’avance">
                                                         <p>Plusieurs mois d’avance</p>
                                                     </picture>
-                                                    <picture class="p-select-pop-pj" data-value="Déclaration d’impôt">
+                                                    <picture class="p-select-pop-pj-garant" data-value="Déclaration d’impôt">
                                                         <p>Déclaration d’impôt</p>
                                                     </picture>
-                                                    <picture class="p-select-pop-pj" data-value="Recommandation du dernier bailleur">
+                                                    <picture class="p-select-pop-pj-garant" data-value="Recommandation du dernier bailleur">
                                                         <p>Recommandation du dernier bailleur</p>
                                                     </picture>
                                                     <picture class="last-select">
@@ -76,7 +75,7 @@ btnAddPj.addEventListener('click', function(){
                                                 </svg>
                                                 
                                         </i>
-                                        <i class="i-delete-pj">
+                                        <i class="i-delete-pj-garant">
                                             <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <rect width="30" height="30" rx="5" transform="matrix(1 0 0 -1 0 30)" fill="#DC3545"/>
                                                 <path d="M9 22.4063C9 22.8289 9.15804 23.2343 9.43934 23.5332C9.72064 23.8321 10.1022 24 10.5 24H19.5C19.8978 24 20.2794 23.8321 20.5607 23.5332C20.842 23.2343 21 22.8289 21 22.4063V16.25C21 13.4886 18.7614 11.25 16 11.25H14C11.2386 11.25 9 13.4886 9 16.25V22.4063ZM17.5 13.9063C17.5 13.7654 17.5527 13.6302 17.6464 13.5306C17.7402 13.431 17.8674 13.375 18 13.375C18.1326 13.375 18.2598 13.431 18.3536 13.5306C18.4473 13.6302 18.5 13.7654 18.5 13.9063V21.3438C18.5 21.4846 18.4473 21.6198 18.3536 21.7194C18.2598 21.819 18.1326 21.875 18 21.875C17.8674 21.875 17.7402 21.819 17.6464 21.7194C17.5527 21.6198 17.5 21.4846 17.5 21.3438V13.9063ZM14.5 13.9063C14.5 13.7654 14.5527 13.6302 14.6464 13.5306C14.7402 13.431 14.8674 13.375 15 13.375C15.1326 13.375 15.2598 13.431 15.3536 13.5306C15.4473 13.6302 15.5 13.7654 15.5 13.9063V21.3438C15.5 21.4846 15.4473 21.6198 15.3536 21.7194C15.2598 21.819 15.1326 21.875 15 21.875C14.8674 21.875 14.7402 21.819 14.6464 21.7194C14.5527 21.6198 14.5 21.4846 14.5 21.3438V13.9063ZM11.5 13.9063C11.5 13.7654 11.5527 13.6302 11.6464 13.5306C11.7402 13.431 11.8674 13.375 12 13.375C12.1326 13.375 12.2598 13.431 12.3536 13.5306C12.4473 13.6302 12.5 13.7654 12.5 13.9063V21.3438C12.5 21.4846 12.4473 21.6198 12.3536 21.7194C12.2598 21.819 12.1326 21.875 12 21.875C11.8674 21.875 11.7402 21.819 11.6464 21.7194C11.5527 21.6198 11.5 21.4846 11.5 21.3438V13.9063ZM21.5 8.06251H18.4369C18.0175 8.06251 17.6356 7.82074 17.4563 7.44161C17.394 7.30887 17.2982 7.19721 17.1795 7.11919C17.0608 7.04118 16.9239 6.9999 16.7844 7.00001H13.2125C13.0732 6.99944 12.9367 7.04056 12.8184 7.11866C12.7001 7.19676 12.6049 7.30869 12.5437 7.44161C12.3644 7.82074 11.9825 8.06251 11.5631 8.06251H8.5C8.36739 8.06251 8.24021 8.11848 8.14645 8.2181C8.05268 8.31773 8 8.45286 8 8.59376V9.65626C8 9.79715 8.05268 9.93228 8.14645 10.0319C8.24021 10.1315 8.36739 10.1875 8.5 10.1875H21.5C21.6326 10.1875 21.7598 10.1315 21.8536 10.0319C21.9473 9.93228 22 9.79715 22 9.65626V8.59376C22 8.45286 21.9473 8.31773 21.8536 8.2181C21.7598 8.11848 21.6326 8.06251 21.5 8.06251Z" fill="white"/>
@@ -87,20 +86,21 @@ btnAddPj.addEventListener('click', function(){
                                </div>
                                  `
 
-    tbodyPj.appendChild(divTrSelect);
-
-      // Ajouter le comportement de suppression
-      document.querySelector('.i-delete-pj').addEventListener('click', function () {
-
-        trAddPj.style.display = 'block';
-         
-        divTrSelect.style.display = 'none';
-        divTrSelect.innerHTML = '';
-                // alert('delete')
-            });
+    tbodyPjGrt.appendChild(divTrSelectGarant);
 
 
-            addSelectFunction();
+    document.querySelector('.i-delete-pj-garant').addEventListener('click', function () {
+
+        trAddPjGrt.style.display = 'block';
+
+        divTrSelectGarant.style.display = 'none';
+        divTrSelectGarant.innerHTML = '';
+        // alert('delete')
+    });
+
+    addSelectGarantFunction();
+
+
 })
 
 // trAddPj.style.display = 'none';

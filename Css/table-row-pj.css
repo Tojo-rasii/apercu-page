@@ -43,6 +43,8 @@
     width: 100%;
     border-top: none;
 }
+
+
 .col-tr-add-pj{
     /* background: red; */
     padding: 5em;
@@ -119,6 +121,7 @@
     position: absolute;
     font-size: 0.9em;
     overflow: hidden;
+    z-index: 999999;
     width: 100%;
     outline:  1px solid #EEEEEE;
     display: none;
@@ -179,4 +182,75 @@ display: flex;
 }
 .action-row-pj i:hover{
     scale: 1.05;
+}
+
+/* GARANT */
+.tr-add-pj-garant{
+    border: 2px dashed #58585680;
+    width: 100%;
+    border-top: none;
+}
+.tr-add-select-pj-garant{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border: 1px solid #585856;
+    margin-top: 1em;
+}
+
+.tr-add-select-pj-garant .th-pj{
+    border: none;
+    /* background: red; */
+}
+
+/* SELECT GARANT */
+/* SELECT POP */
+.select-label-pj-garant {
+    background: #EEEEEE;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em;
+    border-radius: 0.5em;
+    cursor: pointer;
+}
+.select-pj {
+    position: relative;
+}
+
+.pop-select-pj-garant {
+    background: #fff;
+    border-radius: 0.5em;
+    margin-top: 0.5em;
+    position: absolute;
+    font-size: 0.9em;
+    overflow: hidden;
+    z-index: 999999;
+    width: 100%;
+    outline: 1px solid #EEEEEE;
+    display: none;
+}
+
+.pop-display-garant {
+    display: block;
+}
+
+.rotate-pj-garant {
+    /* background: red !important; */
+    rotate: 180deg;
+}
+
+.p-select-pop-pj-garant {
+    padding: 1em;
+    /* background: green; */
+    display: flex;
+    flex-direction: row;
+}
+.p-select-pop-pj-garant:hover {
+    background: #EEEEEE;
+    cursor: pointer;
+}
+.active-pj-garant {
+    background: #EEEEEE;
 }
