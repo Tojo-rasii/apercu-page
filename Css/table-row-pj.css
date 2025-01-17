@@ -205,6 +205,8 @@
 .tr-add-pj-add {
     display: none;
     margin-top: 1em;
+    /* background: red; */
+    width: max-content;
 }
 
 

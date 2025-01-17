@@ -1,37 +1,51 @@
 function addSelectFunction() {
 
-    const selectLabelPj = document.querySelector('.select-label-pj');
-    const popSelectPj = document.querySelector('.pop-select-pj');
-    const svgDown = document.querySelector('.svg-down');
+    const selectLabelPj = document.querySelectorAll('.select-label-pj');
+    const popSelectPj = document.querySelectorAll('.pop-select-pj');
+    const svgDown = document.querySelectorAll('.svg-down');
     const pSelectPopPj = document.querySelectorAll('.p-select-pop-pj');
-    const pSelectPj = document.querySelector('.p-select-pj');
+    const pSelectPj = document.querySelectorAll('.p-select-pj');
 
-    selectLabelPj.addEventListener('click', function () {
-        popSelectPj.classList.toggle('pop-display');
-        svgDown.classList.toggle('rotate-pj');
-    })
+    selectLabelPj.forEach((selectclick, index) => {
+        selectclick.addEventListener('click', function (e) {
+            e.stopPropagation();
 
-    pSelectPopPj.forEach(selectpop => {
-        selectpop.addEventListener('click', function () {
-            // alert(selectpop.getAttribute('data-value'));
-            const valueSelect = selectpop.getAttribute('data-value');
-
-            pSelectPj.innerHTML = valueSelect;
+            popSelectPj[index].classList.toggle('pop-display');
 
 
-            popSelectPj.classList.toggle('pop-display');
-            svgDown.classList.toggle('rotate-pj');
-
-            // Supprimer la classe active-pj de tous les éléments
-            pSelectPopPj.forEach(el => el.classList.remove('active-pj'));
-            selectpop.classList.add('active-pj');
+            svgDown[index].classList.toggle('rotate-pj');
+            // alert('red')
         })
+    });
+    // Optionnel : Fermer toutes les listes déroulantes au clic ailleurs sur la page
+    document.addEventListener('click', () => {
+        popSelectPj.forEach((pop) => pop.classList.remove('pop-display'));
+        svgDown.forEach((svg) => svg.classList.remove('rotate-pj'));
+    });
 
-        selectpop.classList.remove('active-pj');
+    pSelectPopPj.forEach((selectpop) => {
+        selectpop.addEventListener('click', function () {
+            const valueSelect = selectpop.getAttribute('data-value');
+            const parentIndex = [...popSelectPj].findIndex(pop =>
+                pop.contains(selectpop)
+            );
+
+            // Mise à jour du contenu correspondant
+            if (parentIndex !== -1) {
+                pSelectPj[parentIndex].innerHTML = valueSelect;
+
+                // Supprimer la classe active des autres éléments de la liste
+                popSelectPj[parentIndex].querySelectorAll('.p-select-pop-pj').forEach(el => {
+                    el.classList.remove('active-pj');
+                });
+
+                // Ajouter la classe active à l'élément sélectionné
+                selectpop.classList.add('active-pj');
+            }
+        });
     });
 
 };
-
 
 // SELECT GARANT
 function addSelectGarantFunction() {
