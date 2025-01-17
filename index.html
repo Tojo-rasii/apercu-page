@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="Css/tooltips-garant.css">
 
     <!-- TABLE ROW -->
-     <link rel="stylesheet" href="Css/table-row-pj.css">
+    <link rel="stylesheet" href="Css/table-row-pj.css">
 
     <link rel="stylesheet" href="Css/champ-maximal.css">
     <link rel="stylesheet" href="Css/select-section.css">
@@ -108,29 +108,34 @@
                             <!-- THEAD -->
                             <div class="thead-pj">
                                 <div class="tr-pj">
-                                    <div class="th-pj flex-1">
+                                    <div class="th-pj th-primary">
                                         <p>Nom du champ</p>
                                     </div>
-                                    <div class="th-pj">
+                                    <div class="th-pj th-secondary">
                                         <p>Champ requis</p>
                                     </div>
-                                    <div class="th-pj">
+                                    <div class="th-pj th-tertiary">
                                         <p>Actions</p>
                                     </div>
                                 </div>
                             </div>
 
                             <!-- TBODY -->
-                             <div class="tbody-pj">
+                            <div class="tbody-pj">
+                                <!-- TR PRIMARY PJ -->
                                 <div class="tr-add-pj">
                                     <picture class="col-tr-add-pj">
-                                     <p class="text-tr-add">Aucune pièce justificative n'a encore été ajoutée pour le candidat.</p>
-<button class="btn-blue">Ajouter des pièces justificatives concernant le Candidat</button>
+                                        <p class="text-tr-add">Aucune pièce justificative n'a encore été ajoutée pour le
+                                            candidat.</p>
+                                        <button class="btn-blue btn-add-pj">Ajouter des pièces justificatives concernant
+                                            le Candidat</button>
                                     </picture>
                                 </div>
-                             </div>
-                        </div>
-                    
+
+                                <!-- TR SELECT PJ -->
+
+                            </div>
+
                     </picture>
 
                     <!-- GARANT -->
@@ -146,29 +151,31 @@
                                 <!-- THEAD -->
                                 <div class="thead-pj">
                                     <div class="tr-pj">
-                                        <div class="th-pj flex-1">
+                                        <div class="th-pj th-primary">
                                             <p>Nom du champ</p>
                                         </div>
-                                        <div class="th-pj">
+                                        <div class="th-pj th-secondary">
                                             <p>Champ requis</p>
                                         </div>
-                                        <div class="th-pj">
+                                        <div class="th-pj th-tertiary">
                                             <p>Actions</p>
                                         </div>
                                     </div>
                                 </div>
-    
+
                                 <!-- TBODY -->
-                                 <div class="tbody-pj">
-                                    <div class="tr-add-pj">
+                                <div class="tbody-pj-garant">
+                                    <div class="tr-add-pj-garant">
                                         <picture class="col-tr-add-pj">
-                                         <p class="text-tr-add">Aucune pièce justificative n'a encore été ajoutée concernant les informations du Garant.</p>
-    <button class="btn-blue">Ajouter des pièces justificatives concernant le Garant</button>
+                                            <p class="text-tr-add">Aucune pièce justificative n'a encore été ajoutée
+                                                concernant les informations du Garant.</p>
+                                            <button class="btn-blue btn-add-pj-garant">Ajouter des pièces justificatives
+                                                concernant le Garant</button>
                                         </picture>
                                     </div>
-                                 </div>
+                                </div>
                             </div>
-                        
+
                         </picture>
                     </div>
 
@@ -834,7 +841,7 @@
                                 </div>
                             </picture>
                         </form>
-                        
+
                     </article>
                 </section>
             </figure>
@@ -901,7 +908,7 @@
             </figure>
         </main>
     </div>
-    
+
     <script src="Javascript/script.js"></script>
     <script src="Javascript/multi-select.js"></script>
     <script src="Javascript/mouseTooltip.js"></script>
@@ -921,9 +928,14 @@
     <script src="Javascript/select-section.js"></script>
     <script src="Javascript/pop-modal2.js"></script>
     <script src="Javascript/add-primary-champ.js"></script>
-    <!-- <script>
-     
-    </script> -->
+
+
+    <!-- NEW -->
+    <!-- TABLE ROW JS -->
+    <script src="Javascript/table-row-pj.js"></script>
+    <script src="Javascript/selectTableRowPj.js"></script>
+    <!-- garant -->
+    <script src="Javascript/table-row-pj-garant.js"></script>
 </body>
 
 </html>

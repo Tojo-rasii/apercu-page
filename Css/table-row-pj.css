@@ -18,8 +18,23 @@
     padding: 1em;
 }
 
-.flex-1{
-    flex: 1;
+/* FLEX TABLE TH  */
+
+.th-primary{
+    flex: 1 70%;
+    /* background: red; */
+}
+
+.th-secondary{
+    flex: 1 10%;
+    /* background: green; */
+    text-align: center;
+}
+
+.th-tertiary{
+    text-align: center;
+    flex: 1 10%;
+    /* background: yellow; */
 }
 
 .tr-add-pj {
@@ -28,6 +43,8 @@
     width: 100%;
     border-top: none;
 }
+
+
 .col-tr-add-pj{
     /* background: red; */
     padding: 5em;
@@ -51,4 +68,189 @@
 .col-tr-add-pj button{
     line-height: 1.5em;
     text-wrap: wrap;
+}
+
+
+
+/* TR SELECT TABLE */
+.select-label-pj{
+    background: #EEEEEE;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em;
+    border-radius: 0.5em;
+    cursor: pointer;
+}
+
+.tr-add-select-pj{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border: 1px solid #585856;
+    margin-top: 1em;
+}
+
+.tr-add-select-pj .th-pj{
+    border: none;
+    /* background: red; */
+}
+.inpt-check-pj{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    /* background: red; */
+    height: 100%;
+}
+.inpt-check-pj input{
+    width: 1.8em;
+    height: 1.8em;
+    accent-color: #03A84E;
+}
+
+/* SELECT POP */
+.select-pj{
+    position: relative;
+}
+.pop-select-pj{
+    background: #fff;
+    border-radius: 0.5em;
+    margin-top: 0.5em;
+    position: absolute;
+    font-size: 0.9em;
+    overflow: hidden;
+    z-index: 999999;
+    width: 100%;
+    outline:  1px solid #EEEEEE;
+    display: none;
+}
+.pop-display{
+    display: block;
+}
+
+.rotate-pj{
+    /* background: red !important; */
+    rotate: 180deg;
+}
+.p-select-pop-pj{
+    padding: 1em;
+    /* background: green; */
+    display: flex;
+flex-direction: row;
+}
+
+.active-pj{
+    background: #EEEEEE;
+}
+.last-select{
+    outline:  1px solid #EEEEEE;
+padding: 1em; display: flex;
+flex-direction: row;
+}
+.last-select p{
+    font-weight: 500;
+}
+.p-select-pop-pj:hover{
+    background: #EEEEEE;
+    cursor: pointer;
+}
+.plus-pj{
+    font-size: 1.4em;
+    font-weight: 700;
+    margin-right: 0.7em;
+    color: #03A84E;
+}
+
+/* ACTION */
+.action-row-pj{
+    display: flex;
+    flex-direction: row;
+    gap: 0.5em;
+    align-items: center;
+    justify-content: center;
+    /* background: red; */
+    height: 100%;
+}
+.action-row-pj i{
+display: flex;
+    flex-direction: row;
+    align-items: center;
+    cursor: pointer;
+    justify-content: center;
+}
+.action-row-pj i:hover{
+    scale: 1.05;
+}
+
+/* GARANT */
+.tr-add-pj-garant{
+    border: 2px dashed #58585680;
+    width: 100%;
+    border-top: none;
+}
+.tr-add-select-pj-garant{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border: 1px solid #585856;
+    margin-top: 1em;
+}
+
+.tr-add-select-pj-garant .th-pj{
+    border: none;
+    /* background: red; */
+}
+
+/* SELECT GARANT */
+/* SELECT POP */
+.select-label-pj-garant {
+    background: #EEEEEE;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em;
+    border-radius: 0.5em;
+    cursor: pointer;
+}
+.select-pj {
+    position: relative;
+}
+
+.pop-select-pj-garant {
+    background: #fff;
+    border-radius: 0.5em;
+    margin-top: 0.5em;
+    position: absolute;
+    font-size: 0.9em;
+    overflow: hidden;
+    z-index: 999999;
+    width: 100%;
+    outline: 1px solid #EEEEEE;
+    display: none;
+}
+
+.pop-display-garant {
+    display: block;
+}
+
+.rotate-pj-garant {
+    /* background: red !important; */
+    rotate: 180deg;
+}
+
+.p-select-pop-pj-garant {
+    padding: 1em;
+    /* background: green; */
+    display: flex;
+    flex-direction: row;
+}
+.p-select-pop-pj-garant:hover {
+    background: #EEEEEE;
+    cursor: pointer;
+}
+.active-pj-garant {
+    background: #EEEEEE;
 }
