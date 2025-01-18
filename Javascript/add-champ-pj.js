@@ -84,8 +84,8 @@ function addNewChampPj() {
                                </div>
                                  `
 
-    tbodyPj.appendChild(divTrSelect);
-    tbodyPj.insertBefore(divTrSelect, document.querySelector('.tr-add-pj-add '));
+    // tbodyPj.appendChild(divTrSelect);
+    tbodyPj.insertBefore(divTrSelect, document.querySelector('.tr-add-pj-add'));
 
     // Ajouter le comportement de suppression
     divTrSelect.querySelector('.i-delete-pj').addEventListener('click', function () {

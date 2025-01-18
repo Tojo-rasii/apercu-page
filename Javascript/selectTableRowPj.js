@@ -28,24 +28,64 @@ function addSelectFunction() {
     //         console.log(`Index : ${index}, Element :`, popSelectPj[index]);
     //     });
     // });
+    // Ouvrir/fermer le pop-up
+    // Gérer l'affichage du pop-up pour chaque champ
+    // Fonction pour fermer tous les pop-ups
+    function closeAllPopups() {
+        const allPopups = document.querySelectorAll('.pop-select-pj');
+        allPopups.forEach(popup => {
+            popup.style.display = 'none';
+        });
+    }
 
-    document.addEventListener('click', function (e) {
-        selectLabelPj.forEach((selectclick, index) => {
-            if (selectclick.contains(e.target)) {
-                e.stopPropagation();
+    // Ouvrir le pop-up sur clic et fermer les autres
+    document.querySelectorAll('.select-label-pj').forEach(label => {
+        label.addEventListener('click', function (event) {
+            // Fermer tous les autres pop-ups
+            closeAllPopups();
 
-                popSelectPj.forEach((pop, i) => {
-                    if (i !== index) {
-                        pop.classList.remove('pop-display');
-                        svgDown[i].classList.remove('rotate-pj');
-                    }
-                });
-
-                popSelectPj[index].classList.toggle('pop-display');
-                svgDown[index].classList.toggle('rotate-pj');
-            }
+            // Ouvrir celui du champ cliqué
+            const popSelect = label.closest('.th-pj').querySelector('.pop-select-pj');
+            popSelect.style.display = popSelect.style.display === 'block' ? 'none' : 'block';
         });
     });
+
+    // Sélectionner un élément et le mettre dans le label
+    document.querySelectorAll('.p-select-pop-pj').forEach(item => {
+        item.addEventListener('click', function () {
+            const selectedText = item.getAttribute('data-value');
+            item.closest('.th-pj').querySelector('.p-select-pj').textContent = selectedText;
+            item.closest('.pop-select-pj').style.display = 'none'; // Fermer le pop-up
+        });
+    });
+
+    // Ajouter une nouvelle pièce
+    document.querySelectorAll('.last-select').forEach(lastSelect => {
+        lastSelect.addEventListener('click', function () {
+            alert("Ajouter une nouvelle pièce");
+        });
+    });
+
+
+
+
+    // document.addEventListener('click', function (e) {
+    //     selectLabelPj.forEach((selectclick, index) => {
+    //         if (selectclick.contains(e.target)) {
+    //             e.stopPropagation();
+
+    //             popSelectPj.forEach((pop, i) => {
+    //                 if (i !== index) {
+    //                     pop.classList.remove('pop-display');
+    //                     svgDown[i].classList.remove('rotate-pj');
+    //                 }
+    //             });
+
+    //             popSelectPj[index].classList.toggle('pop-display');
+    //             svgDown[index].classList.toggle('rotate-pj');
+    //         }
+    //     });
+    // });
 
 
 
@@ -56,27 +96,27 @@ function addSelectFunction() {
     });
 
 
-    pSelectPopPj.forEach((selectpop) => {
-        selectpop.addEventListener('click', function () {
-            const valueSelect = selectpop.getAttribute('data-value');
-            const parentIndex = [...popSelectPj].findIndex(pop =>
-                pop.contains(selectpop)
-            );
+    // pSelectPopPj.forEach((selectpop) => {
+    //     selectpop.addEventListener('click', function () {
+    //         const valueSelect = selectpop.getAttribute('data-value');
+    //         const parentIndex = [...popSelectPj].findIndex(pop =>
+    //             pop.contains(selectpop)
+    //         );
 
-            // Mise à jour du contenu correspondant
-            if (parentIndex !== -1) {
-                pSelectPj[parentIndex].innerHTML = valueSelect;
+    //         // Mise à jour du contenu correspondant
+    //         if (parentIndex !== -1) {
+    //             pSelectPj[parentIndex].innerHTML = valueSelect;
 
-                // Supprimer la classe active des autres éléments de la liste
-                popSelectPj[parentIndex].querySelectorAll('.p-select-pop-pj').forEach(el => {
-                    el.classList.remove('active-pj');
-                });
+    //             // Supprimer la classe active des autres éléments de la liste
+    //             popSelectPj[parentIndex].querySelectorAll('.p-select-pop-pj').forEach(el => {
+    //                 el.classList.remove('active-pj');
+    //             });
 
-                // Ajouter la classe active à l'élément sélectionné
-                selectpop.classList.add('active-pj');
-            }
-        });
-    });
+    //             // Ajouter la classe active à l'élément sélectionné
+    //             selectpop.classList.add('active-pj');
+    //         }
+    //     });
+    // });
 };
 
 // SELECT GARANT
