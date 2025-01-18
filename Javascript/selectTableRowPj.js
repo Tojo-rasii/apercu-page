@@ -31,6 +31,8 @@ function addSelectFunction() {
     // Ouvrir/fermer le pop-up
     // Gérer l'affichage du pop-up pour chaque champ
     // Fonction pour fermer tous les pop-ups
+    // Fonction pour fermer tous les pop-ups
+    // Fonction pour fermer tous les pop-ups
     function closeAllPopups() {
         const allPopups = document.querySelectorAll('.pop-select-pj');
         allPopups.forEach(popup => {
@@ -121,36 +123,74 @@ function addSelectFunction() {
 
 // SELECT GARANT
 function addSelectGarantFunction() {
-
+    // Sélectionner les éléments spécifiques pour chaque champ
     const selectLabelPjGarant = document.querySelector('.select-label-pj-garant');
-    const popSelectPjGarant = document.querySelector('.pop-select-pj-garant');
     const svgDownGarant = document.querySelector('.svg-down-garant');
-    const pSelectPopPjGarant = document.querySelectorAll('.p-select-pop-pj-garant');
-    const pSelectPjGarant = document.querySelector('.p-select-pj-garant');
 
-    selectLabelPjGarant.addEventListener('click', function () {
-        popSelectPjGarant.classList.toggle('pop-display-garant');
-        svgDownGarant.classList.toggle('rotate-pj-garant');
-    })
+    // Fonction pour fermer tous les pop-ups
+    function closeAllPopupsGarant() {
+        const allPopupsGrt = document.querySelectorAll('.pop-select-pj-garant');
+        allPopupsGrt.forEach(popupgrt => {
+            popupgrt.style.display = 'none';
+        });
+    }
 
-    pSelectPopPjGarant.forEach(selectpopgarant => {
-        selectpopgarant.addEventListener('click', function () {
-            // alert(selectpop.getAttribute('data-value'));
-            const valueSelect = selectpopgarant.getAttribute('data-value');
+    // Fonction pour gérer l'ouverture et la fermeture des pop-ups
+    document.querySelectorAll('.select-label-pj-garant').forEach(labelgrt => {
+        labelgrt.addEventListener('click', function (event) {
+            // Fermer tous les autres pop-ups
+            closeAllPopupsGarant();
 
-            pSelectPjGarant.innerHTML = valueSelect;
+            // Trouver le pop-up spécifique au label cliqué
+            const popSelectgrt = labelgrt.closest('.th-pj').querySelector('.pop-select-pj-garant');
 
-
-            popSelectPjGarant.classList.toggle('pop-display-garant');
-            svgDownGarant.classList.toggle('rotate-pj-garant');
-
-            // Supprimer la classe active-pj de tous les éléments
-            pSelectPopPjGarant.forEach(e => e.classList.remove('active-pj-garant'));
-            selectpopgarant.classList.add('active-pj-garant');
-        })
-
-        selectpopgarant.classList.remove('active-pj-garant');
+            // Vérifier si le pop-up est déjà ouvert, si oui on le ferme, sinon on l'ouvre
+            if (popSelectgrt.style.display === 'block') {
+                popSelectgrt.style.display = 'none';
+            } else {
+                popSelectgrt.style.display = 'block';
+            }
+        });
     });
 
-};
+    // Sélectionner un élément dans le pop-up et mettre à jour le label
+    document.querySelectorAll('.p-select-pop-pj-garant').forEach(itemgrt => {
+        itemgrt.addEventListener('click', function () {
+            const selectedTextgrt = itemgrt.getAttribute('data-value');
+
+            // Mettre à jour le texte du label avec la valeur sélectionnée
+            itemgrt.closest('.th-pj').querySelector('.p-select-pj-garant').textContent = selectedTextgrt;
+
+            // Fermer le pop-up après la sélection
+            itemgrt.closest('.pop-select-pj-garant').style.display = 'none';
+        });
+    });
+
+    // Gérer la rotation de l'icône SVG lors du clic sur le label
+    selectLabelPjGarant.addEventListener('click', function () {
+        svgDownGarant.classList.toggle('rotate-pj-garant');
+    });
+
+    // Optionnel : gestion de la sélection active pour chaque élément
+    document.querySelectorAll('.p-select-pop-pj-garant').forEach(selectpopgarant => {
+        selectpopgarant.addEventListener('click', function () {
+            const valueSelect = selectpopgarant.getAttribute('data-value');
+
+            // Mettre à jour le texte dans le label sélectionné
+            const label = selectpopgarant.closest('.th-pj').querySelector('.p-select-pj-garant');
+            label.innerHTML = valueSelect;
+
+            // Fermer le pop-up après la sélection
+            selectpopgarant.closest('.pop-select-pj-garant').style.display = 'none';
+
+            // Mettre à jour la classe active pour l'élément sélectionné
+            document.querySelectorAll('.p-select-pop-pj-garant').forEach(e => e.classList.remove('active-pj-garant'));
+            selectpopgarant.classList.add('active-pj-garant');
+
+            // Optionnel : fermer le SVG de rotation
+            svgDownGarant.classList.remove('rotate-pj-garant');
+        });
+    });
+}
+
 
