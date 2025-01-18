@@ -6,22 +6,55 @@ function addSelectFunction() {
     const pSelectPopPj = document.querySelectorAll('.p-select-pop-pj');
     const pSelectPj = document.querySelectorAll('.p-select-pj');
 
-    selectLabelPj.forEach((selectclick, index) => {
-        selectclick.addEventListener('click', function (e) {
-            e.stopPropagation();
-
-            popSelectPj[index].classList.toggle('pop-display');
 
 
-            svgDown[index].classList.toggle('rotate-pj');
-            // alert('red')
-        })
+    // Vérifie que tous les éléments nécessaires existent
+    // selectLabelPj.forEach((selectclick, index) => {
+    //     selectclick.addEventListener('click', function (e) {
+    //         e.stopPropagation();
+
+    //         // Supprime les classes sur tous les autres éléments avant d'ajouter
+    //         popSelectPj.forEach((pop, i) => {
+    //             if (i !== index) {
+    //                 pop.classList.remove('pop-display');
+    //                 svgDown[i].classList.remove('rotate-pj');
+    //             }
+    //         });
+
+    //         // Bascule les classes pour l'élément courant
+    //         popSelectPj[index].classList.toggle('pop-display');
+    //         svgDown[index].classList.toggle('rotate-pj');
+
+    //         console.log(`Index : ${index}, Element :`, popSelectPj[index]);
+    //     });
+    // });
+
+    document.addEventListener('click', function (e) {
+        selectLabelPj.forEach((selectclick, index) => {
+            if (selectclick.contains(e.target)) {
+                e.stopPropagation();
+
+                popSelectPj.forEach((pop, i) => {
+                    if (i !== index) {
+                        pop.classList.remove('pop-display');
+                        svgDown[i].classList.remove('rotate-pj');
+                    }
+                });
+
+                popSelectPj[index].classList.toggle('pop-display');
+                svgDown[index].classList.toggle('rotate-pj');
+            }
+        });
     });
+
+
+
     // Optionnel : Fermer toutes les listes déroulantes au clic ailleurs sur la page
     document.addEventListener('click', () => {
         popSelectPj.forEach((pop) => pop.classList.remove('pop-display'));
         svgDown.forEach((svg) => svg.classList.remove('rotate-pj'));
     });
+
 
     pSelectPopPj.forEach((selectpop) => {
         selectpop.addEventListener('click', function () {
@@ -44,7 +77,6 @@ function addSelectFunction() {
             }
         });
     });
-
 };
 
 // SELECT GARANT

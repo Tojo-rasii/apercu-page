@@ -209,6 +209,31 @@
     width: max-content;
 }
 
+.btn-add-champ {
+    border: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1em;
+    padding: 1em 0;
+    background: none;
+    transition: 0.1s;
+}
+
+.btn-add-champ:hover {
+    color: #03A84E;
+}
+
+.btn-add-champ i {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.btn-add-champ p {
+    font-weight: 600;
+}
+
 
 
 
@@ -298,4 +323,37 @@
 
 .active-pj-garant {
     background: #EEEEEE;
+}
+
+/* btn add new pj garant*/
+.tr-add-pj-add-garant {
+    display: none;
+    margin-top: 1em;
+    /* background: red; */
+    width: max-content;
+}
+
+.btn-add-champ {
+    border: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1em;
+    padding: 1em 0;
+    background: none;
+    transition: 0.1s;
+}
+
+.btn-add-champ:hover {
+    color: #03A84E;
+}
+
+.btn-add-champ i {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.btn-add-champ p {
+    font-weight: 600;
 }
