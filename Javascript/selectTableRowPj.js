@@ -6,33 +6,6 @@ function addSelectFunction() {
     const pSelectPopPj = document.querySelectorAll('.p-select-pop-pj');
     const pSelectPj = document.querySelectorAll('.p-select-pj');
 
-
-
-    // Vérifie que tous les éléments nécessaires existent
-    // selectLabelPj.forEach((selectclick, index) => {
-    //     selectclick.addEventListener('click', function (e) {
-    //         e.stopPropagation();
-
-    //         // Supprime les classes sur tous les autres éléments avant d'ajouter
-    //         popSelectPj.forEach((pop, i) => {
-    //             if (i !== index) {
-    //                 pop.classList.remove('pop-display');
-    //                 svgDown[i].classList.remove('rotate-pj');
-    //             }
-    //         });
-
-    //         // Bascule les classes pour l'élément courant
-    //         popSelectPj[index].classList.toggle('pop-display');
-    //         svgDown[index].classList.toggle('rotate-pj');
-
-    //         console.log(`Index : ${index}, Element :`, popSelectPj[index]);
-    //     });
-    // });
-    // Ouvrir/fermer le pop-up
-    // Gérer l'affichage du pop-up pour chaque champ
-    // Fonction pour fermer tous les pop-ups
-    // Fonction pour fermer tous les pop-ups
-    // Fonction pour fermer tous les pop-ups
     function closeAllPopups() {
         const allPopups = document.querySelectorAll('.pop-select-pj');
         allPopups.forEach(popup => {
@@ -49,6 +22,9 @@ function addSelectFunction() {
             // Ouvrir celui du champ cliqué
             const popSelect = label.closest('.th-pj').querySelector('.pop-select-pj');
             popSelect.style.display = popSelect.style.display === 'block' ? 'none' : 'block';
+
+
+          
         });
     });
 
@@ -58,6 +34,10 @@ function addSelectFunction() {
             const selectedText = item.getAttribute('data-value');
             item.closest('.th-pj').querySelector('.p-select-pj').textContent = selectedText;
             item.closest('.pop-select-pj').style.display = 'none'; // Fermer le pop-up
+
+            // Mettre à jour la classe active pour l'élément sélectionné
+            document.querySelectorAll('.p-select-pop-pj').forEach(e => e.classList.remove('active-pj'));
+            item.classList.add('active-pj');
         });
     });
 
@@ -71,34 +51,7 @@ function addSelectFunction() {
 
 
 
-    // document.addEventListener('click', function (e) {
-    //     selectLabelPj.forEach((selectclick, index) => {
-    //         if (selectclick.contains(e.target)) {
-    //             e.stopPropagation();
-
-    //             popSelectPj.forEach((pop, i) => {
-    //                 if (i !== index) {
-    //                     pop.classList.remove('pop-display');
-    //                     svgDown[i].classList.remove('rotate-pj');
-    //                 }
-    //             });
-
-    //             popSelectPj[index].classList.toggle('pop-display');
-    //             svgDown[index].classList.toggle('rotate-pj');
-    //         }
-    //     });
-    // });
-
-
-
-    // Optionnel : Fermer toutes les listes déroulantes au clic ailleurs sur la page
-    document.addEventListener('click', () => {
-        popSelectPj.forEach((pop) => pop.classList.remove('pop-display'));
-        svgDown.forEach((svg) => svg.classList.remove('rotate-pj'));
-    });
-
-
-    // pSelectPopPj.forEach((selectpop) => {
+   
     //     selectpop.addEventListener('click', function () {
     //         const valueSelect = selectpop.getAttribute('data-value');
     //         const parentIndex = [...popSelectPj].findIndex(pop =>
