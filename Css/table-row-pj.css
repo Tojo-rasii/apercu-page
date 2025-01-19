@@ -160,6 +160,19 @@
     padding: 1em;
     display: flex;
     flex-direction: row;
+    align-items: center;
+    cursor: pointer;
+}
+
+.last-select:hover {
+    background: #EEEEEE;
+    /* color: #03A84E; */
+}
+
+.last-select i {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 
 .last-select p {
@@ -235,7 +248,7 @@
 }
 
 
-.input-new-piece{
+.input-new-piece {
     width: 100%;
     padding: 0.3em;
 }

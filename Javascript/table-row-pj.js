@@ -14,6 +14,8 @@ btnAddPj.addEventListener('click', function () {
     // TABLE
     addNewChampPj()
     addSelectFunction();
+    // addPieceFunction();
+
 })
 
 // FUNCTION ADD NEW CHAMP

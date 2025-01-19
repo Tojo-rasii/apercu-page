@@ -24,7 +24,7 @@ function addSelectFunction() {
             popSelect.style.display = popSelect.style.display === 'block' ? 'none' : 'block';
 
 
-          
+
         });
     });
 
@@ -40,62 +40,14 @@ function addSelectFunction() {
             item.classList.add('active-pj');
         });
     });
-    
-    function addPieceFunction() {
-        // Sélectionner tous les éléments avec la classe `.last-select`
-        document.querySelectorAll('.last-select').forEach(lastSelect => {
-            lastSelect.addEventListener('click', function () {
-                // Trouver le conteneur principal où les nouvelles pièces doivent être ajoutées
-                const container = lastSelect.closest('.col-pop-pj');
-
-                // Créer un nouvel élément `picture`
-                const newPiece = document.createElement('picture');
-                newPiece.className = 'p-select-pop-pj editable-piece';
-
-                // Ajouter un champ d'entrée pour permettre la modification
-                newPiece.innerHTML = `
-                <input type="text" class="input-new-piece" placeholder="Entrez le nom de la pièce" />
-            `;
-
-                // Insérer la nouvelle pièce juste avant l'élément `.last-select`
-                container.insertBefore(newPiece, lastSelect);
-
-                // Ajouter un gestionnaire d'événement pour sauvegarder le texte après modification
-                const input = newPiece.querySelector('.input-new-piece');
-                input.addEventListener('blur', function () {
-                    // Si le champ perd le focus, remplacer l'input par un texte
-                    const textValue = input.value.trim() || "Nouvelle pièce";
-                    newPiece.setAttribute('data-value', textValue);
-                    newPiece.innerHTML = `<p>${textValue}</p>`;
-
-                    // Rendre l'élément sélectionnable
-                    newPiece.addEventListener('click', function () {
-                        const selectedText = newPiece.getAttribute('data-value');
-                        const label = newPiece.closest('.th-pj').querySelector('.p-select-pj');
-                        label.textContent = selectedText;
-
-                        // Fermer le pop-up après la sélection
-                        newPiece.closest('.pop-select-pj').style.display = 'none';
-                    });
-                });
-
-                // Focus automatique sur le champ d'entrée pour une modification immédiate
-                input.focus();
-
-                // Message de confirmation ou autre action
-                // alert("Nouvelle pièce ajoutée. Modifiez son nom avant de quitter le champ.");
-            });
-        });
-    }
-
-    // Appeler la fonction pour lier les événements
-    addPieceFunction();
 
 
 
 
 
-   
+
+
+
     //     selectpop.addEventListener('click', function () {
     //         const valueSelect = selectpop.getAttribute('data-value');
     //         const parentIndex = [...popSelectPj].findIndex(pop =>
@@ -117,6 +69,62 @@ function addSelectFunction() {
     //     });
     // });
 };
+
+function addPieceFunction() {
+    // Sélectionner tous les éléments avec la classe `.last-select`
+    document.querySelectorAll('.last-select').forEach(lastSelect => {
+        lastSelect.addEventListener('click', function () {
+            // Trouver le conteneur principal où les nouvelles pièces doivent être ajoutées
+            const container = lastSelect.closest('.col-pop-pj');
+
+            // Créer un nouvel élément `picture`
+            const newPiece = document.createElement('picture');
+            newPiece.className = 'p-select-pop-pj editable-piece';
+
+            // Ajouter un champ d'entrée pour permettre la modification
+            newPiece.innerHTML = `
+                <input type="text" class="input-new-piece" placeholder="Entrez le nom de la pièce" />
+            `;
+
+            // Insérer la nouvelle pièce juste avant l'élément `.last-select`
+            container.insertBefore(newPiece, lastSelect);
+
+            // Ajouter un gestionnaire d'événement pour sauvegarder le texte après modification
+            const input = newPiece.querySelector('.input-new-piece');
+            // input.addEventListener('blur', function () {
+
+            // });
+
+            input.addEventListener('keydown', function (e) {
+
+                if (e.key === 'Enter') { // Vérifie si la touche pressée est "Entrée"
+                    // Si le champ perd le focus, remplacer l'input par un texte
+                    const textValue = input.value.trim() || "Nouvelle pièce";
+                    newPiece.setAttribute('data-value', textValue);
+                    newPiece.innerHTML = `<p>${textValue}</p>`;
+
+                    // Rendre l'élément sélectionnable
+                    newPiece.addEventListener('click', function () {
+                        const selectedText = newPiece.getAttribute('data-value');
+                        const label = newPiece.closest('.th-pj').querySelector('.p-select-pj');
+                        label.textContent = selectedText;
+
+                        // Fermer le pop-up après la sélection
+                        newPiece.closest('.pop-select-pj').style.display = 'none';
+                    });
+                }
+            });
+
+            // Focus automatique sur le champ d'entrée pour une modification immédiate
+            input.focus();
+
+            // Message de confirmation ou autre action
+            // alert("Nouvelle pièce ajoutée. Modifiez son nom avant de quitter le champ.");
+        });
+    });
+}
+
+// Appeler la fonction pour lier les événements
 
 // SELECT GARANT
 function addSelectGarantFunction() {
