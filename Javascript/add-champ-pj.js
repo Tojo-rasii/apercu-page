@@ -15,7 +15,8 @@ function addNewChampPj() {
                                  <div class="th-pj th-primary">
                                          <figure class="select-pj">
                                             <label class="select-label-pj">
-                                                <p class="p-select-pj">Bulletin de paie</p>
+                                                
+                                                <input type='text' readonly class="p-select-pj inpt-p-select" placeholder='Bulletin de paie'>
                                                 <i class="svg-down">
                                                     <svg width="15" height="7" viewBox="0 0 8 3" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                         <path d="M6.64288 0H0.896441C0.498902 0 0.300133 0.382449 0.581537 0.606582L3.45364 2.89594C3.62784 3.03469 3.91148 3.03469 4.08568 2.89594L6.95778 0.606582C7.23919 0.382449 7.04042 0 6.64288 0Z" fill="#585856"/>
@@ -86,6 +87,7 @@ function addNewChampPj() {
 
     // tbodyPj.appendChild(divTrSelect);
     tbodyPj.insertBefore(divTrSelect, document.querySelector('.tr-add-pj-add'));
+    attachLastSelectHandler(divTrSelect);
 
     // Ajouter le comportement de suppression
     divTrSelect.querySelector('.i-delete-pj').addEventListener('click', function () {

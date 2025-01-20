@@ -9,10 +9,11 @@
     justify-content: space-between;
     gap: 0.5em;
     align-items: center;
-    width: 15em;
+    /* width: 15em; */
     font-size: 1em;
     margin: 0 auto;
     border-radius: 0.5em;
+    /* background: red; */
     background: #EEEEEE;
     padding: 0.7em;
 }
@@ -23,6 +24,19 @@
     background: none !important;
     color: #585856;
 }
+
+.inpt-p-select {
+    background: #EEEEEE;
+    width: 100%;
+    border: none;
+    outline: none;
+}
+
+/* .inpt-p-select:focus {
+
+    border: 2px solid red;
+    outline: none;
+} */
 
 .popups {
     position: absolute;
