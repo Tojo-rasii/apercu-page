@@ -122,6 +122,10 @@
     position: relative;
 }
 
+.p-select-pj {
+    cursor: pointer;
+}
+
 .pop-select-pj {
     background: #fff;
     border-radius: 0.5em;
