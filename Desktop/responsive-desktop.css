@@ -2,7 +2,7 @@
 
     .picture-table figure {
         width: 100%;
-        background: green !important;
+        /* background: green !important; */
         height: auto !important;
         /* padding: 1em; */
         overflow-x: auto;
