@@ -307,6 +307,14 @@
     position: relative;
 }
 
+.p-select-pj-garant {
+    background: none;
+    outline: none;
+    border: none;
+    width: 100%;
+    cursor: pointer;
+}
+
 .pop-select-pj-garant {
     background: #fff;
     border-radius: 0.5em;
@@ -351,6 +359,30 @@
     margin-top: 1em;
     /* background: red; */
     width: max-content;
+}
+
+.last-select-garant {
+    outline: 1px solid #EEEEEE;
+    padding: 1em;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    cursor: pointer;
+}
+
+.last-select-garant:hover {
+    background: #EEEEEE;
+    /* color: #03A84E; */
+}
+
+.last-select-garant i {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.last-select-garant p {
+    font-weight: 500;
 }
 
 .btn-add-champ {

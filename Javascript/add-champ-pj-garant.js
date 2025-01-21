@@ -15,7 +15,7 @@ function addNewChampPjGarant() {
                                  <div class="th-pj th-primary">
                                          <figure class="select-pj">
                                             <label class="select-label-pj-garant">
-                                                <p class="p-select-pj-garant">Bulletin de paie</p>
+                                                  <input type='text' readonly class="p-select-pj-garant inpt-p-select-garant" placeholder='Bulletin de paie'>
                                                 <i class="svg-down-garant">
                                                     <svg width="15" height="7" viewBox="0 0 8 3" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                         <path d="M6.64288 0H0.896441C0.498902 0 0.300133 0.382449 0.581537 0.606582L3.45364 2.89594C3.62784 3.03469 3.91148 3.03469 4.08568 2.89594L6.95778 0.606582C7.23919 0.382449 7.04042 0 6.64288 0Z" fill="#585856"/>
@@ -48,7 +48,7 @@ function addNewChampPjGarant() {
                                                     <picture class="p-select-pop-pj-garant" data-value="Recommandation du dernier bailleur">
                                                         <p>Recommandation du dernier bailleur</p>
                                                     </picture>
-                                                    <picture class="last-select">
+                                                    <picture class="last-select-garant">
                                                          <p><span class="plus-pj">+</span>Ajouter une nouvelle pièce</p>
                                                     </picture>
                                                 </div>
@@ -86,8 +86,8 @@ function addNewChampPjGarant() {
 
 
 
-    tbodyPjGrt.appendChild(divTrSelectGarant);
     tbodyPjGrt.insertBefore(divTrSelectGarant, document.querySelector('.tr-add-pj-add-garant'));
+    attachLastSelectGarantHandler(divTrSelectGarant);
 
     // Ajouter le comportement de suppression
 

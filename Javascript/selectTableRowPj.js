@@ -99,7 +99,7 @@ function attachLastSelectHandler(container) {
         if (!container.contains(e.target)) { // Vérifie si le clic est en dehors du container
             pop.style.display = 'none'; // Masquer le pop-up
             pSelect.placeholder = 'Bulletin de paie'; // Réinitialiser le texte du <p> à vide
-            pSelect.setAttribute('readonly','readonly');
+            pSelect.setAttribute('readonly', 'readonly');
         }
     });
 }
@@ -144,7 +144,7 @@ function addSelectGarantFunction() {
             const selectedTextgrt = itemgrt.getAttribute('data-value');
 
             // Mettre à jour le texte du label avec la valeur sélectionnée
-            itemgrt.closest('.th-pj').querySelector('.p-select-pj-garant').textContent = selectedTextgrt;
+            itemgrt.closest('.th-pj').querySelector('.p-select-pj-garant').value = selectedTextgrt;
 
             // Fermer le pop-up après la sélection
             itemgrt.closest('.pop-select-pj-garant').style.display = 'none';
@@ -179,3 +179,42 @@ function addSelectGarantFunction() {
 }
 
 
+
+function attachLastSelectGarantHandler(container) {
+    const lastSelectGarant = container.querySelector('.last-select-garant');
+    const label = container.querySelector('.select-label-pj-garant');
+    const popGarant = container.querySelector('.pop-select-pj-garant');
+    const pSelectGarant = container.querySelector('.p-select-pj-garant'); // Récupérer le <p> à réinitialiser
+    const defaultOptionsGarant = container.querySelectorAll('.p-select-pop-pj-garant');
+
+    if (lastSelectGarant) {
+        lastSelectGarant.addEventListener('click', () => {
+            pSelectGarant.removeAttribute('readonly');
+            pSelectGarant.value = ''; // Réinitialiser le texte du <p> à vide
+            pSelectGarant.placeholder = ''; // Réinitialiser le texte du <p> à vide
+            pSelectGarant.focus(); // Mettre le focus sur le champ
+            popGarant.style.display = 'none'; // Supprimer le popGarant-up
+
+
+            // pSelectGarant.addEventListener('blur', function () {
+            //    alert(pSelectGarant.value)
+            // })
+
+        });
+    }
+    defaultOptionsGarant.forEach(option => {
+        option.addEventListener('click', () => {
+            pSelectGarant.setAttribute('readonly', 'readonly'); // Restaurer readonly si un choix est fait
+            popGarant.style.display = 'none'; // Masquer le pop-up
+        });
+    });
+
+    // Ajouter un événement global pour fermer le pop-up si on clique ailleurs
+    document.addEventListener('click', (e) => {
+        if (!container.contains(e.target)) { // Vérifie si le clic est en dehors du container
+            popGarant.style.display = 'none'; // Masquer le pop-up
+            pSelectGarant.placeholder = 'Bulletin de paie'; // Réinitialiser le texte du <p> à vide
+            pSelectGarant.setAttribute('readonly', 'readonly');
+        }
+    });
+}
